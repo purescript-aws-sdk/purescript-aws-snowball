@@ -10,7 +10,7 @@ options :: Options
 
 ``` purescript
 newtype Address
-  = Address { "AddressId" :: NullOrUndefined (AddressId), "Name" :: NullOrUndefined (String), "Company" :: NullOrUndefined (String), "Street1" :: NullOrUndefined (String), "Street2" :: NullOrUndefined (String), "Street3" :: NullOrUndefined (String), "City" :: NullOrUndefined (String), "StateOrProvince" :: NullOrUndefined (String), "PrefectureOrDistrict" :: NullOrUndefined (String), "Landmark" :: NullOrUndefined (String), "Country" :: NullOrUndefined (String), "PostalCode" :: NullOrUndefined (String), "PhoneNumber" :: NullOrUndefined (String), "IsRestricted" :: NullOrUndefined (Boolean) }
+  = Address { "AddressId" :: Maybe (AddressId), "Name" :: Maybe (String), "Company" :: Maybe (String), "Street1" :: Maybe (String), "Street2" :: Maybe (String), "Street3" :: Maybe (String), "City" :: Maybe (String), "StateOrProvince" :: Maybe (String), "PrefectureOrDistrict" :: Maybe (String), "Landmark" :: Maybe (String), "Country" :: Maybe (String), "PostalCode" :: Maybe (String), "PhoneNumber" :: Maybe (String), "IsRestricted" :: Maybe (Boolean) }
 ```
 
 <p>The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
@@ -35,7 +35,7 @@ Constructs Address from required parameters
 #### `newAddress'`
 
 ``` purescript
-newAddress' :: ({ "AddressId" :: NullOrUndefined (AddressId), "Name" :: NullOrUndefined (String), "Company" :: NullOrUndefined (String), "Street1" :: NullOrUndefined (String), "Street2" :: NullOrUndefined (String), "Street3" :: NullOrUndefined (String), "City" :: NullOrUndefined (String), "StateOrProvince" :: NullOrUndefined (String), "PrefectureOrDistrict" :: NullOrUndefined (String), "Landmark" :: NullOrUndefined (String), "Country" :: NullOrUndefined (String), "PostalCode" :: NullOrUndefined (String), "PhoneNumber" :: NullOrUndefined (String), "IsRestricted" :: NullOrUndefined (Boolean) } -> { "AddressId" :: NullOrUndefined (AddressId), "Name" :: NullOrUndefined (String), "Company" :: NullOrUndefined (String), "Street1" :: NullOrUndefined (String), "Street2" :: NullOrUndefined (String), "Street3" :: NullOrUndefined (String), "City" :: NullOrUndefined (String), "StateOrProvince" :: NullOrUndefined (String), "PrefectureOrDistrict" :: NullOrUndefined (String), "Landmark" :: NullOrUndefined (String), "Country" :: NullOrUndefined (String), "PostalCode" :: NullOrUndefined (String), "PhoneNumber" :: NullOrUndefined (String), "IsRestricted" :: NullOrUndefined (Boolean) }) -> Address
+newAddress' :: ({ "AddressId" :: Maybe (AddressId), "Name" :: Maybe (String), "Company" :: Maybe (String), "Street1" :: Maybe (String), "Street2" :: Maybe (String), "Street3" :: Maybe (String), "City" :: Maybe (String), "StateOrProvince" :: Maybe (String), "PrefectureOrDistrict" :: Maybe (String), "Landmark" :: Maybe (String), "Country" :: Maybe (String), "PostalCode" :: Maybe (String), "PhoneNumber" :: Maybe (String), "IsRestricted" :: Maybe (Boolean) } -> { "AddressId" :: Maybe (AddressId), "Name" :: Maybe (String), "Company" :: Maybe (String), "Street1" :: Maybe (String), "Street2" :: Maybe (String), "Street3" :: Maybe (String), "City" :: Maybe (String), "StateOrProvince" :: Maybe (String), "PrefectureOrDistrict" :: Maybe (String), "Landmark" :: Maybe (String), "Country" :: Maybe (String), "PostalCode" :: Maybe (String), "PhoneNumber" :: Maybe (String), "IsRestricted" :: Maybe (Boolean) }) -> Address
 ```
 
 Constructs Address's fields from required parameters
@@ -188,7 +188,7 @@ Encode ClusterId
 
 ``` purescript
 newtype ClusterLimitExceededException
-  = ClusterLimitExceededException { "Message" :: NullOrUndefined (String) }
+  = ClusterLimitExceededException { "Message" :: Maybe (String) }
 ```
 
 <p>Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five notes.</p>
@@ -213,7 +213,7 @@ Constructs ClusterLimitExceededException from required parameters
 #### `newClusterLimitExceededException'`
 
 ``` purescript
-newClusterLimitExceededException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> ClusterLimitExceededException
+newClusterLimitExceededException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> ClusterLimitExceededException
 ```
 
 Constructs ClusterLimitExceededException's fields from required parameters
@@ -222,7 +222,7 @@ Constructs ClusterLimitExceededException's fields from required parameters
 
 ``` purescript
 newtype ClusterListEntry
-  = ClusterListEntry { "ClusterId" :: NullOrUndefined (String), "ClusterState" :: NullOrUndefined (ClusterState), "CreationDate" :: NullOrUndefined (Timestamp), "Description" :: NullOrUndefined (String) }
+  = ClusterListEntry { "ClusterId" :: Maybe (String), "ClusterState" :: Maybe (ClusterState), "CreationDate" :: Maybe (Timestamp), "Description" :: Maybe (String) }
 ```
 
 <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
@@ -247,7 +247,7 @@ Constructs ClusterListEntry from required parameters
 #### `newClusterListEntry'`
 
 ``` purescript
-newClusterListEntry' :: ({ "ClusterId" :: NullOrUndefined (String), "ClusterState" :: NullOrUndefined (ClusterState), "CreationDate" :: NullOrUndefined (Timestamp), "Description" :: NullOrUndefined (String) } -> { "ClusterId" :: NullOrUndefined (String), "ClusterState" :: NullOrUndefined (ClusterState), "CreationDate" :: NullOrUndefined (Timestamp), "Description" :: NullOrUndefined (String) }) -> ClusterListEntry
+newClusterListEntry' :: ({ "ClusterId" :: Maybe (String), "ClusterState" :: Maybe (ClusterState), "CreationDate" :: Maybe (Timestamp), "Description" :: Maybe (String) } -> { "ClusterId" :: Maybe (String), "ClusterState" :: Maybe (ClusterState), "CreationDate" :: Maybe (Timestamp), "Description" :: Maybe (String) }) -> ClusterListEntry
 ```
 
 Constructs ClusterListEntry's fields from required parameters
@@ -272,7 +272,7 @@ Encode ClusterListEntryList
 
 ``` purescript
 newtype ClusterMetadata
-  = ClusterMetadata { "ClusterId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "ClusterState" :: NullOrUndefined (ClusterState), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) }
+  = ClusterMetadata { "ClusterId" :: Maybe (String), "Description" :: Maybe (String), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "ClusterState" :: Maybe (ClusterState), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) }
 ```
 
 <p>Contains metadata about a specific cluster.</p>
@@ -297,7 +297,7 @@ Constructs ClusterMetadata from required parameters
 #### `newClusterMetadata'`
 
 ``` purescript
-newClusterMetadata' :: ({ "ClusterId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "ClusterState" :: NullOrUndefined (ClusterState), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> { "ClusterId" :: NullOrUndefined (String), "Description" :: NullOrUndefined (String), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "ClusterState" :: NullOrUndefined (ClusterState), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) }) -> ClusterMetadata
+newClusterMetadata' :: ({ "ClusterId" :: Maybe (String), "Description" :: Maybe (String), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "ClusterState" :: Maybe (ClusterState), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) } -> { "ClusterId" :: Maybe (String), "Description" :: Maybe (String), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "ClusterState" :: Maybe (ClusterState), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) }) -> ClusterMetadata
 ```
 
 Constructs ClusterMetadata's fields from required parameters
@@ -354,7 +354,7 @@ Constructs CreateAddressRequest's fields from required parameters
 
 ``` purescript
 newtype CreateAddressResult
-  = CreateAddressResult { "AddressId" :: NullOrUndefined (String) }
+  = CreateAddressResult { "AddressId" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -377,7 +377,7 @@ Constructs CreateAddressResult from required parameters
 #### `newCreateAddressResult'`
 
 ``` purescript
-newCreateAddressResult' :: ({ "AddressId" :: NullOrUndefined (String) } -> { "AddressId" :: NullOrUndefined (String) }) -> CreateAddressResult
+newCreateAddressResult' :: ({ "AddressId" :: Maybe (String) } -> { "AddressId" :: Maybe (String) }) -> CreateAddressResult
 ```
 
 Constructs CreateAddressResult's fields from required parameters
@@ -386,7 +386,7 @@ Constructs CreateAddressResult's fields from required parameters
 
 ``` purescript
 newtype CreateClusterRequest
-  = CreateClusterRequest { "JobType" :: JobType, "Resources" :: JobResource, "Description" :: NullOrUndefined (String), "AddressId" :: AddressId, "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: RoleARN, "SnowballType" :: NullOrUndefined (SnowballType), "ShippingOption" :: ShippingOption, "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) }
+  = CreateClusterRequest { "JobType" :: JobType, "Resources" :: JobResource, "Description" :: Maybe (String), "AddressId" :: AddressId, "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: RoleARN, "SnowballType" :: Maybe (SnowballType), "ShippingOption" :: ShippingOption, "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) }
 ```
 
 ##### Instances
@@ -409,7 +409,7 @@ Constructs CreateClusterRequest from required parameters
 #### `newCreateClusterRequest'`
 
 ``` purescript
-newCreateClusterRequest' :: AddressId -> JobType -> JobResource -> RoleARN -> ShippingOption -> ({ "JobType" :: JobType, "Resources" :: JobResource, "Description" :: NullOrUndefined (String), "AddressId" :: AddressId, "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: RoleARN, "SnowballType" :: NullOrUndefined (SnowballType), "ShippingOption" :: ShippingOption, "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> { "JobType" :: JobType, "Resources" :: JobResource, "Description" :: NullOrUndefined (String), "AddressId" :: AddressId, "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: RoleARN, "SnowballType" :: NullOrUndefined (SnowballType), "ShippingOption" :: ShippingOption, "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) }) -> CreateClusterRequest
+newCreateClusterRequest' :: AddressId -> JobType -> JobResource -> RoleARN -> ShippingOption -> ({ "JobType" :: JobType, "Resources" :: JobResource, "Description" :: Maybe (String), "AddressId" :: AddressId, "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: RoleARN, "SnowballType" :: Maybe (SnowballType), "ShippingOption" :: ShippingOption, "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) } -> { "JobType" :: JobType, "Resources" :: JobResource, "Description" :: Maybe (String), "AddressId" :: AddressId, "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: RoleARN, "SnowballType" :: Maybe (SnowballType), "ShippingOption" :: ShippingOption, "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) }) -> CreateClusterRequest
 ```
 
 Constructs CreateClusterRequest's fields from required parameters
@@ -418,7 +418,7 @@ Constructs CreateClusterRequest's fields from required parameters
 
 ``` purescript
 newtype CreateClusterResult
-  = CreateClusterResult { "ClusterId" :: NullOrUndefined (ClusterId) }
+  = CreateClusterResult { "ClusterId" :: Maybe (ClusterId) }
 ```
 
 ##### Instances
@@ -441,7 +441,7 @@ Constructs CreateClusterResult from required parameters
 #### `newCreateClusterResult'`
 
 ``` purescript
-newCreateClusterResult' :: ({ "ClusterId" :: NullOrUndefined (ClusterId) } -> { "ClusterId" :: NullOrUndefined (ClusterId) }) -> CreateClusterResult
+newCreateClusterResult' :: ({ "ClusterId" :: Maybe (ClusterId) } -> { "ClusterId" :: Maybe (ClusterId) }) -> CreateClusterResult
 ```
 
 Constructs CreateClusterResult's fields from required parameters
@@ -450,7 +450,7 @@ Constructs CreateClusterResult's fields from required parameters
 
 ``` purescript
 newtype CreateJobRequest
-  = CreateJobRequest { "JobType" :: NullOrUndefined (JobType), "Resources" :: NullOrUndefined (JobResource), "Description" :: NullOrUndefined (String), "AddressId" :: NullOrUndefined (AddressId), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ClusterId" :: NullOrUndefined (ClusterId), "SnowballType" :: NullOrUndefined (SnowballType), "ForwardingAddressId" :: NullOrUndefined (AddressId) }
+  = CreateJobRequest { "JobType" :: Maybe (JobType), "Resources" :: Maybe (JobResource), "Description" :: Maybe (String), "AddressId" :: Maybe (AddressId), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ClusterId" :: Maybe (ClusterId), "SnowballType" :: Maybe (SnowballType), "ForwardingAddressId" :: Maybe (AddressId) }
 ```
 
 ##### Instances
@@ -473,7 +473,7 @@ Constructs CreateJobRequest from required parameters
 #### `newCreateJobRequest'`
 
 ``` purescript
-newCreateJobRequest' :: ({ "JobType" :: NullOrUndefined (JobType), "Resources" :: NullOrUndefined (JobResource), "Description" :: NullOrUndefined (String), "AddressId" :: NullOrUndefined (AddressId), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ClusterId" :: NullOrUndefined (ClusterId), "SnowballType" :: NullOrUndefined (SnowballType), "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> { "JobType" :: NullOrUndefined (JobType), "Resources" :: NullOrUndefined (JobResource), "Description" :: NullOrUndefined (String), "AddressId" :: NullOrUndefined (AddressId), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ClusterId" :: NullOrUndefined (ClusterId), "SnowballType" :: NullOrUndefined (SnowballType), "ForwardingAddressId" :: NullOrUndefined (AddressId) }) -> CreateJobRequest
+newCreateJobRequest' :: ({ "JobType" :: Maybe (JobType), "Resources" :: Maybe (JobResource), "Description" :: Maybe (String), "AddressId" :: Maybe (AddressId), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ClusterId" :: Maybe (ClusterId), "SnowballType" :: Maybe (SnowballType), "ForwardingAddressId" :: Maybe (AddressId) } -> { "JobType" :: Maybe (JobType), "Resources" :: Maybe (JobResource), "Description" :: Maybe (String), "AddressId" :: Maybe (AddressId), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ClusterId" :: Maybe (ClusterId), "SnowballType" :: Maybe (SnowballType), "ForwardingAddressId" :: Maybe (AddressId) }) -> CreateJobRequest
 ```
 
 Constructs CreateJobRequest's fields from required parameters
@@ -482,7 +482,7 @@ Constructs CreateJobRequest's fields from required parameters
 
 ``` purescript
 newtype CreateJobResult
-  = CreateJobResult { "JobId" :: NullOrUndefined (JobId) }
+  = CreateJobResult { "JobId" :: Maybe (JobId) }
 ```
 
 ##### Instances
@@ -505,7 +505,7 @@ Constructs CreateJobResult from required parameters
 #### `newCreateJobResult'`
 
 ``` purescript
-newCreateJobResult' :: ({ "JobId" :: NullOrUndefined (JobId) } -> { "JobId" :: NullOrUndefined (JobId) }) -> CreateJobResult
+newCreateJobResult' :: ({ "JobId" :: Maybe (JobId) } -> { "JobId" :: Maybe (JobId) }) -> CreateJobResult
 ```
 
 Constructs CreateJobResult's fields from required parameters
@@ -514,7 +514,7 @@ Constructs CreateJobResult's fields from required parameters
 
 ``` purescript
 newtype DataTransfer
-  = DataTransfer { "BytesTransferred" :: NullOrUndefined (Number), "ObjectsTransferred" :: NullOrUndefined (Number), "TotalBytes" :: NullOrUndefined (Number), "TotalObjects" :: NullOrUndefined (Number) }
+  = DataTransfer { "BytesTransferred" :: Maybe (Number), "ObjectsTransferred" :: Maybe (Number), "TotalBytes" :: Maybe (Number), "TotalObjects" :: Maybe (Number) }
 ```
 
 <p>Defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
@@ -539,7 +539,7 @@ Constructs DataTransfer from required parameters
 #### `newDataTransfer'`
 
 ``` purescript
-newDataTransfer' :: ({ "BytesTransferred" :: NullOrUndefined (Number), "ObjectsTransferred" :: NullOrUndefined (Number), "TotalBytes" :: NullOrUndefined (Number), "TotalObjects" :: NullOrUndefined (Number) } -> { "BytesTransferred" :: NullOrUndefined (Number), "ObjectsTransferred" :: NullOrUndefined (Number), "TotalBytes" :: NullOrUndefined (Number), "TotalObjects" :: NullOrUndefined (Number) }) -> DataTransfer
+newDataTransfer' :: ({ "BytesTransferred" :: Maybe (Number), "ObjectsTransferred" :: Maybe (Number), "TotalBytes" :: Maybe (Number), "TotalObjects" :: Maybe (Number) } -> { "BytesTransferred" :: Maybe (Number), "ObjectsTransferred" :: Maybe (Number), "TotalBytes" :: Maybe (Number), "TotalObjects" :: Maybe (Number) }) -> DataTransfer
 ```
 
 Constructs DataTransfer's fields from required parameters
@@ -580,7 +580,7 @@ Constructs DescribeAddressRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAddressResult
-  = DescribeAddressResult { "Address" :: NullOrUndefined (Address) }
+  = DescribeAddressResult { "Address" :: Maybe (Address) }
 ```
 
 ##### Instances
@@ -603,7 +603,7 @@ Constructs DescribeAddressResult from required parameters
 #### `newDescribeAddressResult'`
 
 ``` purescript
-newDescribeAddressResult' :: ({ "Address" :: NullOrUndefined (Address) } -> { "Address" :: NullOrUndefined (Address) }) -> DescribeAddressResult
+newDescribeAddressResult' :: ({ "Address" :: Maybe (Address) } -> { "Address" :: Maybe (Address) }) -> DescribeAddressResult
 ```
 
 Constructs DescribeAddressResult's fields from required parameters
@@ -612,7 +612,7 @@ Constructs DescribeAddressResult's fields from required parameters
 
 ``` purescript
 newtype DescribeAddressesRequest
-  = DescribeAddressesRequest { "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }
+  = DescribeAddressesRequest { "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -635,7 +635,7 @@ Constructs DescribeAddressesRequest from required parameters
 #### `newDescribeAddressesRequest'`
 
 ``` purescript
-newDescribeAddressesRequest' :: ({ "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }) -> DescribeAddressesRequest
+newDescribeAddressesRequest' :: ({ "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }) -> DescribeAddressesRequest
 ```
 
 Constructs DescribeAddressesRequest's fields from required parameters
@@ -644,7 +644,7 @@ Constructs DescribeAddressesRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeAddressesResult
-  = DescribeAddressesResult { "Addresses" :: NullOrUndefined (AddressList), "NextToken" :: NullOrUndefined (String) }
+  = DescribeAddressesResult { "Addresses" :: Maybe (AddressList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -667,7 +667,7 @@ Constructs DescribeAddressesResult from required parameters
 #### `newDescribeAddressesResult'`
 
 ``` purescript
-newDescribeAddressesResult' :: ({ "Addresses" :: NullOrUndefined (AddressList), "NextToken" :: NullOrUndefined (String) } -> { "Addresses" :: NullOrUndefined (AddressList), "NextToken" :: NullOrUndefined (String) }) -> DescribeAddressesResult
+newDescribeAddressesResult' :: ({ "Addresses" :: Maybe (AddressList), "NextToken" :: Maybe (String) } -> { "Addresses" :: Maybe (AddressList), "NextToken" :: Maybe (String) }) -> DescribeAddressesResult
 ```
 
 Constructs DescribeAddressesResult's fields from required parameters
@@ -708,7 +708,7 @@ Constructs DescribeClusterRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeClusterResult
-  = DescribeClusterResult { "ClusterMetadata" :: NullOrUndefined (ClusterMetadata) }
+  = DescribeClusterResult { "ClusterMetadata" :: Maybe (ClusterMetadata) }
 ```
 
 ##### Instances
@@ -731,7 +731,7 @@ Constructs DescribeClusterResult from required parameters
 #### `newDescribeClusterResult'`
 
 ``` purescript
-newDescribeClusterResult' :: ({ "ClusterMetadata" :: NullOrUndefined (ClusterMetadata) } -> { "ClusterMetadata" :: NullOrUndefined (ClusterMetadata) }) -> DescribeClusterResult
+newDescribeClusterResult' :: ({ "ClusterMetadata" :: Maybe (ClusterMetadata) } -> { "ClusterMetadata" :: Maybe (ClusterMetadata) }) -> DescribeClusterResult
 ```
 
 Constructs DescribeClusterResult's fields from required parameters
@@ -772,7 +772,7 @@ Constructs DescribeJobRequest's fields from required parameters
 
 ``` purescript
 newtype DescribeJobResult
-  = DescribeJobResult { "JobMetadata" :: NullOrUndefined (JobMetadata), "SubJobMetadata" :: NullOrUndefined (JobMetadataList) }
+  = DescribeJobResult { "JobMetadata" :: Maybe (JobMetadata), "SubJobMetadata" :: Maybe (JobMetadataList) }
 ```
 
 ##### Instances
@@ -795,7 +795,7 @@ Constructs DescribeJobResult from required parameters
 #### `newDescribeJobResult'`
 
 ``` purescript
-newDescribeJobResult' :: ({ "JobMetadata" :: NullOrUndefined (JobMetadata), "SubJobMetadata" :: NullOrUndefined (JobMetadataList) } -> { "JobMetadata" :: NullOrUndefined (JobMetadata), "SubJobMetadata" :: NullOrUndefined (JobMetadataList) }) -> DescribeJobResult
+newDescribeJobResult' :: ({ "JobMetadata" :: Maybe (JobMetadata), "SubJobMetadata" :: Maybe (JobMetadataList) } -> { "JobMetadata" :: Maybe (JobMetadata), "SubJobMetadata" :: Maybe (JobMetadataList) }) -> DescribeJobResult
 ```
 
 Constructs DescribeJobResult's fields from required parameters
@@ -804,7 +804,7 @@ Constructs DescribeJobResult's fields from required parameters
 
 ``` purescript
 newtype EventTriggerDefinition
-  = EventTriggerDefinition { "EventResourceARN" :: NullOrUndefined (ResourceARN) }
+  = EventTriggerDefinition { "EventResourceARN" :: Maybe (ResourceARN) }
 ```
 
 <p>The container for the <a>EventTriggerDefinition$EventResourceARN</a>.</p>
@@ -829,7 +829,7 @@ Constructs EventTriggerDefinition from required parameters
 #### `newEventTriggerDefinition'`
 
 ``` purescript
-newEventTriggerDefinition' :: ({ "EventResourceARN" :: NullOrUndefined (ResourceARN) } -> { "EventResourceARN" :: NullOrUndefined (ResourceARN) }) -> EventTriggerDefinition
+newEventTriggerDefinition' :: ({ "EventResourceARN" :: Maybe (ResourceARN) } -> { "EventResourceARN" :: Maybe (ResourceARN) }) -> EventTriggerDefinition
 ```
 
 Constructs EventTriggerDefinition's fields from required parameters
@@ -886,7 +886,7 @@ Constructs GetJobManifestRequest's fields from required parameters
 
 ``` purescript
 newtype GetJobManifestResult
-  = GetJobManifestResult { "ManifestURI" :: NullOrUndefined (String) }
+  = GetJobManifestResult { "ManifestURI" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -909,7 +909,7 @@ Constructs GetJobManifestResult from required parameters
 #### `newGetJobManifestResult'`
 
 ``` purescript
-newGetJobManifestResult' :: ({ "ManifestURI" :: NullOrUndefined (String) } -> { "ManifestURI" :: NullOrUndefined (String) }) -> GetJobManifestResult
+newGetJobManifestResult' :: ({ "ManifestURI" :: Maybe (String) } -> { "ManifestURI" :: Maybe (String) }) -> GetJobManifestResult
 ```
 
 Constructs GetJobManifestResult's fields from required parameters
@@ -950,7 +950,7 @@ Constructs GetJobUnlockCodeRequest's fields from required parameters
 
 ``` purescript
 newtype GetJobUnlockCodeResult
-  = GetJobUnlockCodeResult { "UnlockCode" :: NullOrUndefined (String) }
+  = GetJobUnlockCodeResult { "UnlockCode" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -973,7 +973,7 @@ Constructs GetJobUnlockCodeResult from required parameters
 #### `newGetJobUnlockCodeResult'`
 
 ``` purescript
-newGetJobUnlockCodeResult' :: ({ "UnlockCode" :: NullOrUndefined (String) } -> { "UnlockCode" :: NullOrUndefined (String) }) -> GetJobUnlockCodeResult
+newGetJobUnlockCodeResult' :: ({ "UnlockCode" :: Maybe (String) } -> { "UnlockCode" :: Maybe (String) }) -> GetJobUnlockCodeResult
 ```
 
 Constructs GetJobUnlockCodeResult's fields from required parameters
@@ -998,7 +998,7 @@ Encode GetSnowballUsageRequest
 
 ``` purescript
 newtype GetSnowballUsageResult
-  = GetSnowballUsageResult { "SnowballLimit" :: NullOrUndefined (Int), "SnowballsInUse" :: NullOrUndefined (Int) }
+  = GetSnowballUsageResult { "SnowballLimit" :: Maybe (Int), "SnowballsInUse" :: Maybe (Int) }
 ```
 
 ##### Instances
@@ -1021,7 +1021,7 @@ Constructs GetSnowballUsageResult from required parameters
 #### `newGetSnowballUsageResult'`
 
 ``` purescript
-newGetSnowballUsageResult' :: ({ "SnowballLimit" :: NullOrUndefined (Int), "SnowballsInUse" :: NullOrUndefined (Int) } -> { "SnowballLimit" :: NullOrUndefined (Int), "SnowballsInUse" :: NullOrUndefined (Int) }) -> GetSnowballUsageResult
+newGetSnowballUsageResult' :: ({ "SnowballLimit" :: Maybe (Int), "SnowballsInUse" :: Maybe (Int) } -> { "SnowballLimit" :: Maybe (Int), "SnowballsInUse" :: Maybe (Int) }) -> GetSnowballUsageResult
 ```
 
 Constructs GetSnowballUsageResult's fields from required parameters
@@ -1030,7 +1030,7 @@ Constructs GetSnowballUsageResult's fields from required parameters
 
 ``` purescript
 newtype InvalidAddressException
-  = InvalidAddressException { "Message" :: NullOrUndefined (String) }
+  = InvalidAddressException { "Message" :: Maybe (String) }
 ```
 
 <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
@@ -1055,7 +1055,7 @@ Constructs InvalidAddressException from required parameters
 #### `newInvalidAddressException'`
 
 ``` purescript
-newInvalidAddressException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidAddressException
+newInvalidAddressException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidAddressException
 ```
 
 Constructs InvalidAddressException's fields from required parameters
@@ -1064,7 +1064,7 @@ Constructs InvalidAddressException's fields from required parameters
 
 ``` purescript
 newtype InvalidInputCombinationException
-  = InvalidInputCombinationException { "Message" :: NullOrUndefined (String) }
+  = InvalidInputCombinationException { "Message" :: Maybe (String) }
 ```
 
 <p>Job or cluster creation failed. One ore more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
@@ -1089,7 +1089,7 @@ Constructs InvalidInputCombinationException from required parameters
 #### `newInvalidInputCombinationException'`
 
 ``` purescript
-newInvalidInputCombinationException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidInputCombinationException
+newInvalidInputCombinationException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidInputCombinationException
 ```
 
 Constructs InvalidInputCombinationException's fields from required parameters
@@ -1098,7 +1098,7 @@ Constructs InvalidInputCombinationException's fields from required parameters
 
 ``` purescript
 newtype InvalidJobStateException
-  = InvalidJobStateException { "Message" :: NullOrUndefined (String) }
+  = InvalidJobStateException { "Message" :: Maybe (String) }
 ```
 
 <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
@@ -1123,7 +1123,7 @@ Constructs InvalidJobStateException from required parameters
 #### `newInvalidJobStateException'`
 
 ``` purescript
-newInvalidJobStateException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidJobStateException
+newInvalidJobStateException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidJobStateException
 ```
 
 Constructs InvalidJobStateException's fields from required parameters
@@ -1132,7 +1132,7 @@ Constructs InvalidJobStateException's fields from required parameters
 
 ``` purescript
 newtype InvalidNextTokenException
-  = InvalidNextTokenException { "Message" :: NullOrUndefined (String) }
+  = InvalidNextTokenException { "Message" :: Maybe (String) }
 ```
 
 <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
@@ -1157,7 +1157,7 @@ Constructs InvalidNextTokenException from required parameters
 #### `newInvalidNextTokenException'`
 
 ``` purescript
-newInvalidNextTokenException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidNextTokenException
+newInvalidNextTokenException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidNextTokenException
 ```
 
 Constructs InvalidNextTokenException's fields from required parameters
@@ -1166,7 +1166,7 @@ Constructs InvalidNextTokenException's fields from required parameters
 
 ``` purescript
 newtype InvalidResourceException
-  = InvalidResourceException { "Message" :: NullOrUndefined (String) }
+  = InvalidResourceException { "Message" :: Maybe (String) }
 ```
 
 <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
@@ -1191,7 +1191,7 @@ Constructs InvalidResourceException from required parameters
 #### `newInvalidResourceException'`
 
 ``` purescript
-newInvalidResourceException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> InvalidResourceException
+newInvalidResourceException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> InvalidResourceException
 ```
 
 Constructs InvalidResourceException's fields from required parameters
@@ -1216,7 +1216,7 @@ Encode JobId
 
 ``` purescript
 newtype JobListEntry
-  = JobListEntry { "JobId" :: NullOrUndefined (String), "JobState" :: NullOrUndefined (JobState), "IsMaster" :: NullOrUndefined (Boolean), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Description" :: NullOrUndefined (String) }
+  = JobListEntry { "JobId" :: Maybe (String), "JobState" :: Maybe (JobState), "IsMaster" :: Maybe (Boolean), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Description" :: Maybe (String) }
 ```
 
 <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.</p>
@@ -1241,7 +1241,7 @@ Constructs JobListEntry from required parameters
 #### `newJobListEntry'`
 
 ``` purescript
-newJobListEntry' :: ({ "JobId" :: NullOrUndefined (String), "JobState" :: NullOrUndefined (JobState), "IsMaster" :: NullOrUndefined (Boolean), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Description" :: NullOrUndefined (String) } -> { "JobId" :: NullOrUndefined (String), "JobState" :: NullOrUndefined (JobState), "IsMaster" :: NullOrUndefined (Boolean), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Description" :: NullOrUndefined (String) }) -> JobListEntry
+newJobListEntry' :: ({ "JobId" :: Maybe (String), "JobState" :: Maybe (JobState), "IsMaster" :: Maybe (Boolean), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Description" :: Maybe (String) } -> { "JobId" :: Maybe (String), "JobState" :: Maybe (JobState), "IsMaster" :: Maybe (Boolean), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Description" :: Maybe (String) }) -> JobListEntry
 ```
 
 Constructs JobListEntry's fields from required parameters
@@ -1266,7 +1266,7 @@ Encode JobListEntryList
 
 ``` purescript
 newtype JobLogs
-  = JobLogs { "JobCompletionReportURI" :: NullOrUndefined (String), "JobSuccessLogURI" :: NullOrUndefined (String), "JobFailureLogURI" :: NullOrUndefined (String) }
+  = JobLogs { "JobCompletionReportURI" :: Maybe (String), "JobSuccessLogURI" :: Maybe (String), "JobFailureLogURI" :: Maybe (String) }
 ```
 
 <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
@@ -1291,7 +1291,7 @@ Constructs JobLogs from required parameters
 #### `newJobLogs'`
 
 ``` purescript
-newJobLogs' :: ({ "JobCompletionReportURI" :: NullOrUndefined (String), "JobSuccessLogURI" :: NullOrUndefined (String), "JobFailureLogURI" :: NullOrUndefined (String) } -> { "JobCompletionReportURI" :: NullOrUndefined (String), "JobSuccessLogURI" :: NullOrUndefined (String), "JobFailureLogURI" :: NullOrUndefined (String) }) -> JobLogs
+newJobLogs' :: ({ "JobCompletionReportURI" :: Maybe (String), "JobSuccessLogURI" :: Maybe (String), "JobFailureLogURI" :: Maybe (String) } -> { "JobCompletionReportURI" :: Maybe (String), "JobSuccessLogURI" :: Maybe (String), "JobFailureLogURI" :: Maybe (String) }) -> JobLogs
 ```
 
 Constructs JobLogs's fields from required parameters
@@ -1300,7 +1300,7 @@ Constructs JobLogs's fields from required parameters
 
 ``` purescript
 newtype JobMetadata
-  = JobMetadata { "JobId" :: NullOrUndefined (String), "JobState" :: NullOrUndefined (JobState), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Resources" :: NullOrUndefined (JobResource), "Description" :: NullOrUndefined (String), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "AddressId" :: NullOrUndefined (AddressId), "ShippingDetails" :: NullOrUndefined (ShippingDetails), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "Notification" :: NullOrUndefined (Notification), "DataTransferProgress" :: NullOrUndefined (DataTransfer), "JobLogInfo" :: NullOrUndefined (JobLogs), "ClusterId" :: NullOrUndefined (String), "ForwardingAddressId" :: NullOrUndefined (AddressId) }
+  = JobMetadata { "JobId" :: Maybe (String), "JobState" :: Maybe (JobState), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Resources" :: Maybe (JobResource), "Description" :: Maybe (String), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "AddressId" :: Maybe (AddressId), "ShippingDetails" :: Maybe (ShippingDetails), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "Notification" :: Maybe (Notification), "DataTransferProgress" :: Maybe (DataTransfer), "JobLogInfo" :: Maybe (JobLogs), "ClusterId" :: Maybe (String), "ForwardingAddressId" :: Maybe (AddressId) }
 ```
 
 <p>Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.</p>
@@ -1325,7 +1325,7 @@ Constructs JobMetadata from required parameters
 #### `newJobMetadata'`
 
 ``` purescript
-newJobMetadata' :: ({ "JobId" :: NullOrUndefined (String), "JobState" :: NullOrUndefined (JobState), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Resources" :: NullOrUndefined (JobResource), "Description" :: NullOrUndefined (String), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "AddressId" :: NullOrUndefined (AddressId), "ShippingDetails" :: NullOrUndefined (ShippingDetails), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "Notification" :: NullOrUndefined (Notification), "DataTransferProgress" :: NullOrUndefined (DataTransfer), "JobLogInfo" :: NullOrUndefined (JobLogs), "ClusterId" :: NullOrUndefined (String), "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> { "JobId" :: NullOrUndefined (String), "JobState" :: NullOrUndefined (JobState), "JobType" :: NullOrUndefined (JobType), "SnowballType" :: NullOrUndefined (SnowballType), "CreationDate" :: NullOrUndefined (Timestamp), "Resources" :: NullOrUndefined (JobResource), "Description" :: NullOrUndefined (String), "KmsKeyARN" :: NullOrUndefined (KmsKeyARN), "RoleARN" :: NullOrUndefined (RoleARN), "AddressId" :: NullOrUndefined (AddressId), "ShippingDetails" :: NullOrUndefined (ShippingDetails), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "Notification" :: NullOrUndefined (Notification), "DataTransferProgress" :: NullOrUndefined (DataTransfer), "JobLogInfo" :: NullOrUndefined (JobLogs), "ClusterId" :: NullOrUndefined (String), "ForwardingAddressId" :: NullOrUndefined (AddressId) }) -> JobMetadata
+newJobMetadata' :: ({ "JobId" :: Maybe (String), "JobState" :: Maybe (JobState), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Resources" :: Maybe (JobResource), "Description" :: Maybe (String), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "AddressId" :: Maybe (AddressId), "ShippingDetails" :: Maybe (ShippingDetails), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "Notification" :: Maybe (Notification), "DataTransferProgress" :: Maybe (DataTransfer), "JobLogInfo" :: Maybe (JobLogs), "ClusterId" :: Maybe (String), "ForwardingAddressId" :: Maybe (AddressId) } -> { "JobId" :: Maybe (String), "JobState" :: Maybe (JobState), "JobType" :: Maybe (JobType), "SnowballType" :: Maybe (SnowballType), "CreationDate" :: Maybe (Timestamp), "Resources" :: Maybe (JobResource), "Description" :: Maybe (String), "KmsKeyARN" :: Maybe (KmsKeyARN), "RoleARN" :: Maybe (RoleARN), "AddressId" :: Maybe (AddressId), "ShippingDetails" :: Maybe (ShippingDetails), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "Notification" :: Maybe (Notification), "DataTransferProgress" :: Maybe (DataTransfer), "JobLogInfo" :: Maybe (JobLogs), "ClusterId" :: Maybe (String), "ForwardingAddressId" :: Maybe (AddressId) }) -> JobMetadata
 ```
 
 Constructs JobMetadata's fields from required parameters
@@ -1350,7 +1350,7 @@ Encode JobMetadataList
 
 ``` purescript
 newtype JobResource
-  = JobResource { "S3Resources" :: NullOrUndefined (S3ResourceList), "LambdaResources" :: NullOrUndefined (LambdaResourceList) }
+  = JobResource { "S3Resources" :: Maybe (S3ResourceList), "LambdaResources" :: Maybe (LambdaResourceList) }
 ```
 
 <p>Contains an array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
@@ -1375,7 +1375,7 @@ Constructs JobResource from required parameters
 #### `newJobResource'`
 
 ``` purescript
-newJobResource' :: ({ "S3Resources" :: NullOrUndefined (S3ResourceList), "LambdaResources" :: NullOrUndefined (LambdaResourceList) } -> { "S3Resources" :: NullOrUndefined (S3ResourceList), "LambdaResources" :: NullOrUndefined (LambdaResourceList) }) -> JobResource
+newJobResource' :: ({ "S3Resources" :: Maybe (S3ResourceList), "LambdaResources" :: Maybe (LambdaResourceList) } -> { "S3Resources" :: Maybe (S3ResourceList), "LambdaResources" :: Maybe (LambdaResourceList) }) -> JobResource
 ```
 
 Constructs JobResource's fields from required parameters
@@ -1432,7 +1432,7 @@ Encode JobType
 
 ``` purescript
 newtype KMSRequestFailedException
-  = KMSRequestFailedException { "Message" :: NullOrUndefined (String) }
+  = KMSRequestFailedException { "Message" :: Maybe (String) }
 ```
 
 <p>The provided AWS Key Management Service key lacks the permissions to perform the specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
@@ -1457,7 +1457,7 @@ Constructs KMSRequestFailedException from required parameters
 #### `newKMSRequestFailedException'`
 
 ``` purescript
-newKMSRequestFailedException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> KMSRequestFailedException
+newKMSRequestFailedException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> KMSRequestFailedException
 ```
 
 Constructs KMSRequestFailedException's fields from required parameters
@@ -1466,7 +1466,7 @@ Constructs KMSRequestFailedException's fields from required parameters
 
 ``` purescript
 newtype KeyRange
-  = KeyRange { "BeginMarker" :: NullOrUndefined (String), "EndMarker" :: NullOrUndefined (String) }
+  = KeyRange { "BeginMarker" :: Maybe (String), "EndMarker" :: Maybe (String) }
 ```
 
 <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
@@ -1491,7 +1491,7 @@ Constructs KeyRange from required parameters
 #### `newKeyRange'`
 
 ``` purescript
-newKeyRange' :: ({ "BeginMarker" :: NullOrUndefined (String), "EndMarker" :: NullOrUndefined (String) } -> { "BeginMarker" :: NullOrUndefined (String), "EndMarker" :: NullOrUndefined (String) }) -> KeyRange
+newKeyRange' :: ({ "BeginMarker" :: Maybe (String), "EndMarker" :: Maybe (String) } -> { "BeginMarker" :: Maybe (String), "EndMarker" :: Maybe (String) }) -> KeyRange
 ```
 
 Constructs KeyRange's fields from required parameters
@@ -1516,7 +1516,7 @@ Encode KmsKeyARN
 
 ``` purescript
 newtype LambdaResource
-  = LambdaResource { "LambdaArn" :: NullOrUndefined (ResourceARN), "EventTriggers" :: NullOrUndefined (EventTriggerDefinitionList) }
+  = LambdaResource { "LambdaArn" :: Maybe (ResourceARN), "EventTriggers" :: Maybe (EventTriggerDefinitionList) }
 ```
 
 <p>Identifies </p>
@@ -1541,7 +1541,7 @@ Constructs LambdaResource from required parameters
 #### `newLambdaResource'`
 
 ``` purescript
-newLambdaResource' :: ({ "LambdaArn" :: NullOrUndefined (ResourceARN), "EventTriggers" :: NullOrUndefined (EventTriggerDefinitionList) } -> { "LambdaArn" :: NullOrUndefined (ResourceARN), "EventTriggers" :: NullOrUndefined (EventTriggerDefinitionList) }) -> LambdaResource
+newLambdaResource' :: ({ "LambdaArn" :: Maybe (ResourceARN), "EventTriggers" :: Maybe (EventTriggerDefinitionList) } -> { "LambdaArn" :: Maybe (ResourceARN), "EventTriggers" :: Maybe (EventTriggerDefinitionList) }) -> LambdaResource
 ```
 
 Constructs LambdaResource's fields from required parameters
@@ -1566,7 +1566,7 @@ Encode LambdaResourceList
 
 ``` purescript
 newtype ListClusterJobsRequest
-  = ListClusterJobsRequest { "ClusterId" :: ClusterId, "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }
+  = ListClusterJobsRequest { "ClusterId" :: ClusterId, "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1589,7 +1589,7 @@ Constructs ListClusterJobsRequest from required parameters
 #### `newListClusterJobsRequest'`
 
 ``` purescript
-newListClusterJobsRequest' :: ClusterId -> ({ "ClusterId" :: ClusterId, "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) } -> { "ClusterId" :: ClusterId, "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }) -> ListClusterJobsRequest
+newListClusterJobsRequest' :: ClusterId -> ({ "ClusterId" :: ClusterId, "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) } -> { "ClusterId" :: ClusterId, "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }) -> ListClusterJobsRequest
 ```
 
 Constructs ListClusterJobsRequest's fields from required parameters
@@ -1598,7 +1598,7 @@ Constructs ListClusterJobsRequest's fields from required parameters
 
 ``` purescript
 newtype ListClusterJobsResult
-  = ListClusterJobsResult { "JobListEntries" :: NullOrUndefined (JobListEntryList), "NextToken" :: NullOrUndefined (String) }
+  = ListClusterJobsResult { "JobListEntries" :: Maybe (JobListEntryList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1621,7 +1621,7 @@ Constructs ListClusterJobsResult from required parameters
 #### `newListClusterJobsResult'`
 
 ``` purescript
-newListClusterJobsResult' :: ({ "JobListEntries" :: NullOrUndefined (JobListEntryList), "NextToken" :: NullOrUndefined (String) } -> { "JobListEntries" :: NullOrUndefined (JobListEntryList), "NextToken" :: NullOrUndefined (String) }) -> ListClusterJobsResult
+newListClusterJobsResult' :: ({ "JobListEntries" :: Maybe (JobListEntryList), "NextToken" :: Maybe (String) } -> { "JobListEntries" :: Maybe (JobListEntryList), "NextToken" :: Maybe (String) }) -> ListClusterJobsResult
 ```
 
 Constructs ListClusterJobsResult's fields from required parameters
@@ -1630,7 +1630,7 @@ Constructs ListClusterJobsResult's fields from required parameters
 
 ``` purescript
 newtype ListClustersRequest
-  = ListClustersRequest { "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }
+  = ListClustersRequest { "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1653,7 +1653,7 @@ Constructs ListClustersRequest from required parameters
 #### `newListClustersRequest'`
 
 ``` purescript
-newListClustersRequest' :: ({ "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }) -> ListClustersRequest
+newListClustersRequest' :: ({ "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }) -> ListClustersRequest
 ```
 
 Constructs ListClustersRequest's fields from required parameters
@@ -1662,7 +1662,7 @@ Constructs ListClustersRequest's fields from required parameters
 
 ``` purescript
 newtype ListClustersResult
-  = ListClustersResult { "ClusterListEntries" :: NullOrUndefined (ClusterListEntryList), "NextToken" :: NullOrUndefined (String) }
+  = ListClustersResult { "ClusterListEntries" :: Maybe (ClusterListEntryList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1685,7 +1685,7 @@ Constructs ListClustersResult from required parameters
 #### `newListClustersResult'`
 
 ``` purescript
-newListClustersResult' :: ({ "ClusterListEntries" :: NullOrUndefined (ClusterListEntryList), "NextToken" :: NullOrUndefined (String) } -> { "ClusterListEntries" :: NullOrUndefined (ClusterListEntryList), "NextToken" :: NullOrUndefined (String) }) -> ListClustersResult
+newListClustersResult' :: ({ "ClusterListEntries" :: Maybe (ClusterListEntryList), "NextToken" :: Maybe (String) } -> { "ClusterListEntries" :: Maybe (ClusterListEntryList), "NextToken" :: Maybe (String) }) -> ListClustersResult
 ```
 
 Constructs ListClustersResult's fields from required parameters
@@ -1694,7 +1694,7 @@ Constructs ListClustersResult's fields from required parameters
 
 ``` purescript
 newtype ListJobsRequest
-  = ListJobsRequest { "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }
+  = ListJobsRequest { "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1717,7 +1717,7 @@ Constructs ListJobsRequest from required parameters
 #### `newListJobsRequest'`
 
 ``` purescript
-newListJobsRequest' :: ({ "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) } -> { "MaxResults" :: NullOrUndefined (ListLimit), "NextToken" :: NullOrUndefined (String) }) -> ListJobsRequest
+newListJobsRequest' :: ({ "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) } -> { "MaxResults" :: Maybe (ListLimit), "NextToken" :: Maybe (String) }) -> ListJobsRequest
 ```
 
 Constructs ListJobsRequest's fields from required parameters
@@ -1726,7 +1726,7 @@ Constructs ListJobsRequest's fields from required parameters
 
 ``` purescript
 newtype ListJobsResult
-  = ListJobsResult { "JobListEntries" :: NullOrUndefined (JobListEntryList), "NextToken" :: NullOrUndefined (String) }
+  = ListJobsResult { "JobListEntries" :: Maybe (JobListEntryList), "NextToken" :: Maybe (String) }
 ```
 
 ##### Instances
@@ -1749,7 +1749,7 @@ Constructs ListJobsResult from required parameters
 #### `newListJobsResult'`
 
 ``` purescript
-newListJobsResult' :: ({ "JobListEntries" :: NullOrUndefined (JobListEntryList), "NextToken" :: NullOrUndefined (String) } -> { "JobListEntries" :: NullOrUndefined (JobListEntryList), "NextToken" :: NullOrUndefined (String) }) -> ListJobsResult
+newListJobsResult' :: ({ "JobListEntries" :: Maybe (JobListEntryList), "NextToken" :: Maybe (String) } -> { "JobListEntries" :: Maybe (JobListEntryList), "NextToken" :: Maybe (String) }) -> ListJobsResult
 ```
 
 Constructs ListJobsResult's fields from required parameters
@@ -1774,7 +1774,7 @@ Encode ListLimit
 
 ``` purescript
 newtype Notification
-  = Notification { "SnsTopicARN" :: NullOrUndefined (SnsTopicARN), "JobStatesToNotify" :: NullOrUndefined (JobStateList), "NotifyAll" :: NullOrUndefined (Boolean) }
+  = Notification { "SnsTopicARN" :: Maybe (SnsTopicARN), "JobStatesToNotify" :: Maybe (JobStateList), "NotifyAll" :: Maybe (Boolean) }
 ```
 
 <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
@@ -1799,7 +1799,7 @@ Constructs Notification from required parameters
 #### `newNotification'`
 
 ``` purescript
-newNotification' :: ({ "SnsTopicARN" :: NullOrUndefined (SnsTopicARN), "JobStatesToNotify" :: NullOrUndefined (JobStateList), "NotifyAll" :: NullOrUndefined (Boolean) } -> { "SnsTopicARN" :: NullOrUndefined (SnsTopicARN), "JobStatesToNotify" :: NullOrUndefined (JobStateList), "NotifyAll" :: NullOrUndefined (Boolean) }) -> Notification
+newNotification' :: ({ "SnsTopicARN" :: Maybe (SnsTopicARN), "JobStatesToNotify" :: Maybe (JobStateList), "NotifyAll" :: Maybe (Boolean) } -> { "SnsTopicARN" :: Maybe (SnsTopicARN), "JobStatesToNotify" :: Maybe (JobStateList), "NotifyAll" :: Maybe (Boolean) }) -> Notification
 ```
 
 Constructs Notification's fields from required parameters
@@ -1840,7 +1840,7 @@ Encode RoleARN
 
 ``` purescript
 newtype S3Resource
-  = S3Resource { "BucketArn" :: NullOrUndefined (ResourceARN), "KeyRange" :: NullOrUndefined (KeyRange) }
+  = S3Resource { "BucketArn" :: Maybe (ResourceARN), "KeyRange" :: Maybe (KeyRange) }
 ```
 
 <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
@@ -1865,7 +1865,7 @@ Constructs S3Resource from required parameters
 #### `newS3Resource'`
 
 ``` purescript
-newS3Resource' :: ({ "BucketArn" :: NullOrUndefined (ResourceARN), "KeyRange" :: NullOrUndefined (KeyRange) } -> { "BucketArn" :: NullOrUndefined (ResourceARN), "KeyRange" :: NullOrUndefined (KeyRange) }) -> S3Resource
+newS3Resource' :: ({ "BucketArn" :: Maybe (ResourceARN), "KeyRange" :: Maybe (KeyRange) } -> { "BucketArn" :: Maybe (ResourceARN), "KeyRange" :: Maybe (KeyRange) }) -> S3Resource
 ```
 
 Constructs S3Resource's fields from required parameters
@@ -1890,7 +1890,7 @@ Encode S3ResourceList
 
 ``` purescript
 newtype Shipment
-  = Shipment { "Status" :: NullOrUndefined (String), "TrackingNumber" :: NullOrUndefined (String) }
+  = Shipment { "Status" :: Maybe (String), "TrackingNumber" :: Maybe (String) }
 ```
 
 <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
@@ -1915,7 +1915,7 @@ Constructs Shipment from required parameters
 #### `newShipment'`
 
 ``` purescript
-newShipment' :: ({ "Status" :: NullOrUndefined (String), "TrackingNumber" :: NullOrUndefined (String) } -> { "Status" :: NullOrUndefined (String), "TrackingNumber" :: NullOrUndefined (String) }) -> Shipment
+newShipment' :: ({ "Status" :: Maybe (String), "TrackingNumber" :: Maybe (String) } -> { "Status" :: Maybe (String), "TrackingNumber" :: Maybe (String) }) -> Shipment
 ```
 
 Constructs Shipment's fields from required parameters
@@ -1924,7 +1924,7 @@ Constructs Shipment's fields from required parameters
 
 ``` purescript
 newtype ShippingDetails
-  = ShippingDetails { "ShippingOption" :: NullOrUndefined (ShippingOption), "InboundShipment" :: NullOrUndefined (Shipment), "OutboundShipment" :: NullOrUndefined (Shipment) }
+  = ShippingDetails { "ShippingOption" :: Maybe (ShippingOption), "InboundShipment" :: Maybe (Shipment), "OutboundShipment" :: Maybe (Shipment) }
 ```
 
 <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
@@ -1949,7 +1949,7 @@ Constructs ShippingDetails from required parameters
 #### `newShippingDetails'`
 
 ``` purescript
-newShippingDetails' :: ({ "ShippingOption" :: NullOrUndefined (ShippingOption), "InboundShipment" :: NullOrUndefined (Shipment), "OutboundShipment" :: NullOrUndefined (Shipment) } -> { "ShippingOption" :: NullOrUndefined (ShippingOption), "InboundShipment" :: NullOrUndefined (Shipment), "OutboundShipment" :: NullOrUndefined (Shipment) }) -> ShippingDetails
+newShippingDetails' :: ({ "ShippingOption" :: Maybe (ShippingOption), "InboundShipment" :: Maybe (Shipment), "OutboundShipment" :: Maybe (Shipment) } -> { "ShippingOption" :: Maybe (ShippingOption), "InboundShipment" :: Maybe (Shipment), "OutboundShipment" :: Maybe (Shipment) }) -> ShippingDetails
 ```
 
 Constructs ShippingDetails's fields from required parameters
@@ -2022,7 +2022,7 @@ Encode SnsTopicARN
 
 ``` purescript
 newtype UnsupportedAddressException
-  = UnsupportedAddressException { "Message" :: NullOrUndefined (String) }
+  = UnsupportedAddressException { "Message" :: Maybe (String) }
 ```
 
 <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact AWS Support.</p>
@@ -2047,7 +2047,7 @@ Constructs UnsupportedAddressException from required parameters
 #### `newUnsupportedAddressException'`
 
 ``` purescript
-newUnsupportedAddressException' :: ({ "Message" :: NullOrUndefined (String) } -> { "Message" :: NullOrUndefined (String) }) -> UnsupportedAddressException
+newUnsupportedAddressException' :: ({ "Message" :: Maybe (String) } -> { "Message" :: Maybe (String) }) -> UnsupportedAddressException
 ```
 
 Constructs UnsupportedAddressException's fields from required parameters
@@ -2056,7 +2056,7 @@ Constructs UnsupportedAddressException's fields from required parameters
 
 ``` purescript
 newtype UpdateClusterRequest
-  = UpdateClusterRequest { "ClusterId" :: ClusterId, "RoleARN" :: NullOrUndefined (RoleARN), "Description" :: NullOrUndefined (String), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) }
+  = UpdateClusterRequest { "ClusterId" :: ClusterId, "RoleARN" :: Maybe (RoleARN), "Description" :: Maybe (String), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) }
 ```
 
 ##### Instances
@@ -2079,7 +2079,7 @@ Constructs UpdateClusterRequest from required parameters
 #### `newUpdateClusterRequest'`
 
 ``` purescript
-newUpdateClusterRequest' :: ClusterId -> ({ "ClusterId" :: ClusterId, "RoleARN" :: NullOrUndefined (RoleARN), "Description" :: NullOrUndefined (String), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> { "ClusterId" :: ClusterId, "RoleARN" :: NullOrUndefined (RoleARN), "Description" :: NullOrUndefined (String), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Notification" :: NullOrUndefined (Notification), "ForwardingAddressId" :: NullOrUndefined (AddressId) }) -> UpdateClusterRequest
+newUpdateClusterRequest' :: ClusterId -> ({ "ClusterId" :: ClusterId, "RoleARN" :: Maybe (RoleARN), "Description" :: Maybe (String), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) } -> { "ClusterId" :: ClusterId, "RoleARN" :: Maybe (RoleARN), "Description" :: Maybe (String), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Notification" :: Maybe (Notification), "ForwardingAddressId" :: Maybe (AddressId) }) -> UpdateClusterRequest
 ```
 
 Constructs UpdateClusterRequest's fields from required parameters
@@ -2104,7 +2104,7 @@ Encode UpdateClusterResult
 
 ``` purescript
 newtype UpdateJobRequest
-  = UpdateJobRequest { "JobId" :: JobId, "RoleARN" :: NullOrUndefined (RoleARN), "Notification" :: NullOrUndefined (Notification), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Description" :: NullOrUndefined (String), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "ForwardingAddressId" :: NullOrUndefined (AddressId) }
+  = UpdateJobRequest { "JobId" :: JobId, "RoleARN" :: Maybe (RoleARN), "Notification" :: Maybe (Notification), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Description" :: Maybe (String), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "ForwardingAddressId" :: Maybe (AddressId) }
 ```
 
 ##### Instances
@@ -2127,7 +2127,7 @@ Constructs UpdateJobRequest from required parameters
 #### `newUpdateJobRequest'`
 
 ``` purescript
-newUpdateJobRequest' :: JobId -> ({ "JobId" :: JobId, "RoleARN" :: NullOrUndefined (RoleARN), "Notification" :: NullOrUndefined (Notification), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Description" :: NullOrUndefined (String), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> { "JobId" :: JobId, "RoleARN" :: NullOrUndefined (RoleARN), "Notification" :: NullOrUndefined (Notification), "Resources" :: NullOrUndefined (JobResource), "AddressId" :: NullOrUndefined (AddressId), "ShippingOption" :: NullOrUndefined (ShippingOption), "Description" :: NullOrUndefined (String), "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity), "ForwardingAddressId" :: NullOrUndefined (AddressId) }) -> UpdateJobRequest
+newUpdateJobRequest' :: JobId -> ({ "JobId" :: JobId, "RoleARN" :: Maybe (RoleARN), "Notification" :: Maybe (Notification), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Description" :: Maybe (String), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "ForwardingAddressId" :: Maybe (AddressId) } -> { "JobId" :: JobId, "RoleARN" :: Maybe (RoleARN), "Notification" :: Maybe (Notification), "Resources" :: Maybe (JobResource), "AddressId" :: Maybe (AddressId), "ShippingOption" :: Maybe (ShippingOption), "Description" :: Maybe (String), "SnowballCapacityPreference" :: Maybe (SnowballCapacity), "ForwardingAddressId" :: Maybe (AddressId) }) -> UpdateJobRequest
 ```
 
 Constructs UpdateJobRequest's fields from required parameters

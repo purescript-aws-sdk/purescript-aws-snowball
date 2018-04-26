@@ -5,7 +5,6 @@ import Prelude
 import Data.Foreign.Class (class Decode, class Encode)
 import Data.Foreign.Generic (defaultOptions, genericDecode, genericEncode)
 import Data.Foreign.Generic.Types (Options)
-import Data.Foreign.NullOrUndefined (NullOrUndefined(..))
 import Data.Generic.Rep (class Generic)
 import Data.Generic.Rep.Show (genericShow)
 import Data.Maybe (Maybe(..))
@@ -20,20 +19,20 @@ options = defaultOptions { unwrapSingleConstructors = true }
 
 -- | <p>The address that you want the Snowball or Snowballs associated with a specific job to be shipped to. Addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. Although no individual elements of the <code>Address</code> are required, if the address is invalid or unsupported, then an exception is thrown.</p>
 newtype Address = Address 
-  { "AddressId" :: NullOrUndefined (AddressId)
-  , "Name" :: NullOrUndefined (String)
-  , "Company" :: NullOrUndefined (String)
-  , "Street1" :: NullOrUndefined (String)
-  , "Street2" :: NullOrUndefined (String)
-  , "Street3" :: NullOrUndefined (String)
-  , "City" :: NullOrUndefined (String)
-  , "StateOrProvince" :: NullOrUndefined (String)
-  , "PrefectureOrDistrict" :: NullOrUndefined (String)
-  , "Landmark" :: NullOrUndefined (String)
-  , "Country" :: NullOrUndefined (String)
-  , "PostalCode" :: NullOrUndefined (String)
-  , "PhoneNumber" :: NullOrUndefined (String)
-  , "IsRestricted" :: NullOrUndefined (Boolean)
+  { "AddressId" :: Maybe (AddressId)
+  , "Name" :: Maybe (String)
+  , "Company" :: Maybe (String)
+  , "Street1" :: Maybe (String)
+  , "Street2" :: Maybe (String)
+  , "Street3" :: Maybe (String)
+  , "City" :: Maybe (String)
+  , "StateOrProvince" :: Maybe (String)
+  , "PrefectureOrDistrict" :: Maybe (String)
+  , "Landmark" :: Maybe (String)
+  , "Country" :: Maybe (String)
+  , "PostalCode" :: Maybe (String)
+  , "PhoneNumber" :: Maybe (String)
+  , "IsRestricted" :: Maybe (Boolean)
   }
 derive instance newtypeAddress :: Newtype Address _
 derive instance repGenericAddress :: Generic Address _
@@ -43,12 +42,12 @@ instance encodeAddress :: Encode Address where encode = genericEncode options
 
 -- | Constructs Address from required parameters
 newAddress :: Address
-newAddress  = Address { "AddressId": (NullOrUndefined Nothing), "City": (NullOrUndefined Nothing), "Company": (NullOrUndefined Nothing), "Country": (NullOrUndefined Nothing), "IsRestricted": (NullOrUndefined Nothing), "Landmark": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PhoneNumber": (NullOrUndefined Nothing), "PostalCode": (NullOrUndefined Nothing), "PrefectureOrDistrict": (NullOrUndefined Nothing), "StateOrProvince": (NullOrUndefined Nothing), "Street1": (NullOrUndefined Nothing), "Street2": (NullOrUndefined Nothing), "Street3": (NullOrUndefined Nothing) }
+newAddress  = Address { "AddressId": Nothing, "City": Nothing, "Company": Nothing, "Country": Nothing, "IsRestricted": Nothing, "Landmark": Nothing, "Name": Nothing, "PhoneNumber": Nothing, "PostalCode": Nothing, "PrefectureOrDistrict": Nothing, "StateOrProvince": Nothing, "Street1": Nothing, "Street2": Nothing, "Street3": Nothing }
 
 -- | Constructs Address's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newAddress' :: ( { "AddressId" :: NullOrUndefined (AddressId) , "Name" :: NullOrUndefined (String) , "Company" :: NullOrUndefined (String) , "Street1" :: NullOrUndefined (String) , "Street2" :: NullOrUndefined (String) , "Street3" :: NullOrUndefined (String) , "City" :: NullOrUndefined (String) , "StateOrProvince" :: NullOrUndefined (String) , "PrefectureOrDistrict" :: NullOrUndefined (String) , "Landmark" :: NullOrUndefined (String) , "Country" :: NullOrUndefined (String) , "PostalCode" :: NullOrUndefined (String) , "PhoneNumber" :: NullOrUndefined (String) , "IsRestricted" :: NullOrUndefined (Boolean) } -> {"AddressId" :: NullOrUndefined (AddressId) , "Name" :: NullOrUndefined (String) , "Company" :: NullOrUndefined (String) , "Street1" :: NullOrUndefined (String) , "Street2" :: NullOrUndefined (String) , "Street3" :: NullOrUndefined (String) , "City" :: NullOrUndefined (String) , "StateOrProvince" :: NullOrUndefined (String) , "PrefectureOrDistrict" :: NullOrUndefined (String) , "Landmark" :: NullOrUndefined (String) , "Country" :: NullOrUndefined (String) , "PostalCode" :: NullOrUndefined (String) , "PhoneNumber" :: NullOrUndefined (String) , "IsRestricted" :: NullOrUndefined (Boolean) } ) -> Address
-newAddress'  customize = (Address <<< customize) { "AddressId": (NullOrUndefined Nothing), "City": (NullOrUndefined Nothing), "Company": (NullOrUndefined Nothing), "Country": (NullOrUndefined Nothing), "IsRestricted": (NullOrUndefined Nothing), "Landmark": (NullOrUndefined Nothing), "Name": (NullOrUndefined Nothing), "PhoneNumber": (NullOrUndefined Nothing), "PostalCode": (NullOrUndefined Nothing), "PrefectureOrDistrict": (NullOrUndefined Nothing), "StateOrProvince": (NullOrUndefined Nothing), "Street1": (NullOrUndefined Nothing), "Street2": (NullOrUndefined Nothing), "Street3": (NullOrUndefined Nothing) }
+newAddress' :: ( { "AddressId" :: Maybe (AddressId) , "Name" :: Maybe (String) , "Company" :: Maybe (String) , "Street1" :: Maybe (String) , "Street2" :: Maybe (String) , "Street3" :: Maybe (String) , "City" :: Maybe (String) , "StateOrProvince" :: Maybe (String) , "PrefectureOrDistrict" :: Maybe (String) , "Landmark" :: Maybe (String) , "Country" :: Maybe (String) , "PostalCode" :: Maybe (String) , "PhoneNumber" :: Maybe (String) , "IsRestricted" :: Maybe (Boolean) } -> {"AddressId" :: Maybe (AddressId) , "Name" :: Maybe (String) , "Company" :: Maybe (String) , "Street1" :: Maybe (String) , "Street2" :: Maybe (String) , "Street3" :: Maybe (String) , "City" :: Maybe (String) , "StateOrProvince" :: Maybe (String) , "PrefectureOrDistrict" :: Maybe (String) , "Landmark" :: Maybe (String) , "Country" :: Maybe (String) , "PostalCode" :: Maybe (String) , "PhoneNumber" :: Maybe (String) , "IsRestricted" :: Maybe (Boolean) } ) -> Address
+newAddress'  customize = (Address <<< customize) { "AddressId": Nothing, "City": Nothing, "Company": Nothing, "Country": Nothing, "IsRestricted": Nothing, "Landmark": Nothing, "Name": Nothing, "PhoneNumber": Nothing, "PostalCode": Nothing, "PrefectureOrDistrict": Nothing, "StateOrProvince": Nothing, "Street1": Nothing, "Street2": Nothing, "Street3": Nothing }
 
 
 
@@ -139,7 +138,7 @@ instance encodeClusterId :: Encode ClusterId where encode = genericEncode option
 
 -- | <p>Job creation failed. Currently, clusters support five nodes. If you have less than five nodes for your cluster and you have more nodes to create for this cluster, try again and create jobs until your cluster has exactly five notes.</p>
 newtype ClusterLimitExceededException = ClusterLimitExceededException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeClusterLimitExceededException :: Newtype ClusterLimitExceededException _
 derive instance repGenericClusterLimitExceededException :: Generic ClusterLimitExceededException _
@@ -149,21 +148,21 @@ instance encodeClusterLimitExceededException :: Encode ClusterLimitExceededExcep
 
 -- | Constructs ClusterLimitExceededException from required parameters
 newClusterLimitExceededException :: ClusterLimitExceededException
-newClusterLimitExceededException  = ClusterLimitExceededException { "Message": (NullOrUndefined Nothing) }
+newClusterLimitExceededException  = ClusterLimitExceededException { "Message": Nothing }
 
 -- | Constructs ClusterLimitExceededException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterLimitExceededException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> ClusterLimitExceededException
-newClusterLimitExceededException'  customize = (ClusterLimitExceededException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newClusterLimitExceededException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> ClusterLimitExceededException
+newClusterLimitExceededException'  customize = (ClusterLimitExceededException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Contains a cluster's state, a cluster's ID, and other important information.</p>
 newtype ClusterListEntry = ClusterListEntry 
-  { "ClusterId" :: NullOrUndefined (String)
-  , "ClusterState" :: NullOrUndefined (ClusterState)
-  , "CreationDate" :: NullOrUndefined (Types.Timestamp)
-  , "Description" :: NullOrUndefined (String)
+  { "ClusterId" :: Maybe (String)
+  , "ClusterState" :: Maybe (ClusterState)
+  , "CreationDate" :: Maybe (Types.Timestamp)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeClusterListEntry :: Newtype ClusterListEntry _
 derive instance repGenericClusterListEntry :: Generic ClusterListEntry _
@@ -173,12 +172,12 @@ instance encodeClusterListEntry :: Encode ClusterListEntry where encode = generi
 
 -- | Constructs ClusterListEntry from required parameters
 newClusterListEntry :: ClusterListEntry
-newClusterListEntry  = ClusterListEntry { "ClusterId": (NullOrUndefined Nothing), "ClusterState": (NullOrUndefined Nothing), "CreationDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newClusterListEntry  = ClusterListEntry { "ClusterId": Nothing, "ClusterState": Nothing, "CreationDate": Nothing, "Description": Nothing }
 
 -- | Constructs ClusterListEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterListEntry' :: ( { "ClusterId" :: NullOrUndefined (String) , "ClusterState" :: NullOrUndefined (ClusterState) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Description" :: NullOrUndefined (String) } -> {"ClusterId" :: NullOrUndefined (String) , "ClusterState" :: NullOrUndefined (ClusterState) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Description" :: NullOrUndefined (String) } ) -> ClusterListEntry
-newClusterListEntry'  customize = (ClusterListEntry <<< customize) { "ClusterId": (NullOrUndefined Nothing), "ClusterState": (NullOrUndefined Nothing), "CreationDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing) }
+newClusterListEntry' :: ( { "ClusterId" :: Maybe (String) , "ClusterState" :: Maybe (ClusterState) , "CreationDate" :: Maybe (Types.Timestamp) , "Description" :: Maybe (String) } -> {"ClusterId" :: Maybe (String) , "ClusterState" :: Maybe (ClusterState) , "CreationDate" :: Maybe (Types.Timestamp) , "Description" :: Maybe (String) } ) -> ClusterListEntry
+newClusterListEntry'  customize = (ClusterListEntry <<< customize) { "ClusterId": Nothing, "ClusterState": Nothing, "CreationDate": Nothing, "Description": Nothing }
 
 
 
@@ -193,19 +192,19 @@ instance encodeClusterListEntryList :: Encode ClusterListEntryList where encode 
 
 -- | <p>Contains metadata about a specific cluster.</p>
 newtype ClusterMetadata = ClusterMetadata 
-  { "ClusterId" :: NullOrUndefined (String)
-  , "Description" :: NullOrUndefined (String)
-  , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN)
-  , "RoleARN" :: NullOrUndefined (RoleARN)
-  , "ClusterState" :: NullOrUndefined (ClusterState)
-  , "JobType" :: NullOrUndefined (JobType)
-  , "SnowballType" :: NullOrUndefined (SnowballType)
-  , "CreationDate" :: NullOrUndefined (Types.Timestamp)
-  , "Resources" :: NullOrUndefined (JobResource)
-  , "AddressId" :: NullOrUndefined (AddressId)
-  , "ShippingOption" :: NullOrUndefined (ShippingOption)
-  , "Notification" :: NullOrUndefined (Notification)
-  , "ForwardingAddressId" :: NullOrUndefined (AddressId)
+  { "ClusterId" :: Maybe (String)
+  , "Description" :: Maybe (String)
+  , "KmsKeyARN" :: Maybe (KmsKeyARN)
+  , "RoleARN" :: Maybe (RoleARN)
+  , "ClusterState" :: Maybe (ClusterState)
+  , "JobType" :: Maybe (JobType)
+  , "SnowballType" :: Maybe (SnowballType)
+  , "CreationDate" :: Maybe (Types.Timestamp)
+  , "Resources" :: Maybe (JobResource)
+  , "AddressId" :: Maybe (AddressId)
+  , "ShippingOption" :: Maybe (ShippingOption)
+  , "Notification" :: Maybe (Notification)
+  , "ForwardingAddressId" :: Maybe (AddressId)
   }
 derive instance newtypeClusterMetadata :: Newtype ClusterMetadata _
 derive instance repGenericClusterMetadata :: Generic ClusterMetadata _
@@ -215,12 +214,12 @@ instance encodeClusterMetadata :: Encode ClusterMetadata where encode = genericE
 
 -- | Constructs ClusterMetadata from required parameters
 newClusterMetadata :: ClusterMetadata
-newClusterMetadata  = ClusterMetadata { "AddressId": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "ClusterState": (NullOrUndefined Nothing), "CreationDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newClusterMetadata  = ClusterMetadata { "AddressId": Nothing, "ClusterId": Nothing, "ClusterState": Nothing, "CreationDate": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "JobType": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing, "SnowballType": Nothing }
 
 -- | Constructs ClusterMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newClusterMetadata' :: ( { "ClusterId" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: NullOrUndefined (RoleARN) , "ClusterState" :: NullOrUndefined (ClusterState) , "JobType" :: NullOrUndefined (JobType) , "SnowballType" :: NullOrUndefined (SnowballType) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Resources" :: NullOrUndefined (JobResource) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> {"ClusterId" :: NullOrUndefined (String) , "Description" :: NullOrUndefined (String) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: NullOrUndefined (RoleARN) , "ClusterState" :: NullOrUndefined (ClusterState) , "JobType" :: NullOrUndefined (JobType) , "SnowballType" :: NullOrUndefined (SnowballType) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Resources" :: NullOrUndefined (JobResource) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } ) -> ClusterMetadata
-newClusterMetadata'  customize = (ClusterMetadata <<< customize) { "AddressId": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "ClusterState": (NullOrUndefined Nothing), "CreationDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newClusterMetadata' :: ( { "ClusterId" :: Maybe (String) , "Description" :: Maybe (String) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: Maybe (RoleARN) , "ClusterState" :: Maybe (ClusterState) , "JobType" :: Maybe (JobType) , "SnowballType" :: Maybe (SnowballType) , "CreationDate" :: Maybe (Types.Timestamp) , "Resources" :: Maybe (JobResource) , "AddressId" :: Maybe (AddressId) , "ShippingOption" :: Maybe (ShippingOption) , "Notification" :: Maybe (Notification) , "ForwardingAddressId" :: Maybe (AddressId) } -> {"ClusterId" :: Maybe (String) , "Description" :: Maybe (String) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: Maybe (RoleARN) , "ClusterState" :: Maybe (ClusterState) , "JobType" :: Maybe (JobType) , "SnowballType" :: Maybe (SnowballType) , "CreationDate" :: Maybe (Types.Timestamp) , "Resources" :: Maybe (JobResource) , "AddressId" :: Maybe (AddressId) , "ShippingOption" :: Maybe (ShippingOption) , "Notification" :: Maybe (Notification) , "ForwardingAddressId" :: Maybe (AddressId) } ) -> ClusterMetadata
+newClusterMetadata'  customize = (ClusterMetadata <<< customize) { "AddressId": Nothing, "ClusterId": Nothing, "ClusterState": Nothing, "CreationDate": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "JobType": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing, "SnowballType": Nothing }
 
 
 
@@ -254,7 +253,7 @@ newCreateAddressRequest' _Address customize = (CreateAddressRequest <<< customiz
 
 
 newtype CreateAddressResult = CreateAddressResult 
-  { "AddressId" :: NullOrUndefined (String)
+  { "AddressId" :: Maybe (String)
   }
 derive instance newtypeCreateAddressResult :: Newtype CreateAddressResult _
 derive instance repGenericCreateAddressResult :: Generic CreateAddressResult _
@@ -264,26 +263,26 @@ instance encodeCreateAddressResult :: Encode CreateAddressResult where encode = 
 
 -- | Constructs CreateAddressResult from required parameters
 newCreateAddressResult :: CreateAddressResult
-newCreateAddressResult  = CreateAddressResult { "AddressId": (NullOrUndefined Nothing) }
+newCreateAddressResult  = CreateAddressResult { "AddressId": Nothing }
 
 -- | Constructs CreateAddressResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateAddressResult' :: ( { "AddressId" :: NullOrUndefined (String) } -> {"AddressId" :: NullOrUndefined (String) } ) -> CreateAddressResult
-newCreateAddressResult'  customize = (CreateAddressResult <<< customize) { "AddressId": (NullOrUndefined Nothing) }
+newCreateAddressResult' :: ( { "AddressId" :: Maybe (String) } -> {"AddressId" :: Maybe (String) } ) -> CreateAddressResult
+newCreateAddressResult'  customize = (CreateAddressResult <<< customize) { "AddressId": Nothing }
 
 
 
 newtype CreateClusterRequest = CreateClusterRequest 
   { "JobType" :: (JobType)
   , "Resources" :: (JobResource)
-  , "Description" :: NullOrUndefined (String)
+  , "Description" :: Maybe (String)
   , "AddressId" :: (AddressId)
-  , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN)
+  , "KmsKeyARN" :: Maybe (KmsKeyARN)
   , "RoleARN" :: (RoleARN)
-  , "SnowballType" :: NullOrUndefined (SnowballType)
+  , "SnowballType" :: Maybe (SnowballType)
   , "ShippingOption" :: (ShippingOption)
-  , "Notification" :: NullOrUndefined (Notification)
-  , "ForwardingAddressId" :: NullOrUndefined (AddressId)
+  , "Notification" :: Maybe (Notification)
+  , "ForwardingAddressId" :: Maybe (AddressId)
   }
 derive instance newtypeCreateClusterRequest :: Newtype CreateClusterRequest _
 derive instance repGenericCreateClusterRequest :: Generic CreateClusterRequest _
@@ -293,17 +292,17 @@ instance encodeCreateClusterRequest :: Encode CreateClusterRequest where encode 
 
 -- | Constructs CreateClusterRequest from required parameters
 newCreateClusterRequest :: AddressId -> JobType -> JobResource -> RoleARN -> ShippingOption -> CreateClusterRequest
-newCreateClusterRequest _AddressId _JobType _Resources _RoleARN _ShippingOption = CreateClusterRequest { "AddressId": _AddressId, "JobType": _JobType, "Resources": _Resources, "RoleARN": _RoleARN, "ShippingOption": _ShippingOption, "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newCreateClusterRequest _AddressId _JobType _Resources _RoleARN _ShippingOption = CreateClusterRequest { "AddressId": _AddressId, "JobType": _JobType, "Resources": _Resources, "RoleARN": _RoleARN, "ShippingOption": _ShippingOption, "Description": Nothing, "ForwardingAddressId": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "SnowballType": Nothing }
 
 -- | Constructs CreateClusterRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterRequest' :: AddressId -> JobType -> JobResource -> RoleARN -> ShippingOption -> ( { "JobType" :: (JobType) , "Resources" :: (JobResource) , "Description" :: NullOrUndefined (String) , "AddressId" :: (AddressId) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: (RoleARN) , "SnowballType" :: NullOrUndefined (SnowballType) , "ShippingOption" :: (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> {"JobType" :: (JobType) , "Resources" :: (JobResource) , "Description" :: NullOrUndefined (String) , "AddressId" :: (AddressId) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: (RoleARN) , "SnowballType" :: NullOrUndefined (SnowballType) , "ShippingOption" :: (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } ) -> CreateClusterRequest
-newCreateClusterRequest' _AddressId _JobType _Resources _RoleARN _ShippingOption customize = (CreateClusterRequest <<< customize) { "AddressId": _AddressId, "JobType": _JobType, "Resources": _Resources, "RoleARN": _RoleARN, "ShippingOption": _ShippingOption, "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newCreateClusterRequest' :: AddressId -> JobType -> JobResource -> RoleARN -> ShippingOption -> ( { "JobType" :: (JobType) , "Resources" :: (JobResource) , "Description" :: Maybe (String) , "AddressId" :: (AddressId) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: (RoleARN) , "SnowballType" :: Maybe (SnowballType) , "ShippingOption" :: (ShippingOption) , "Notification" :: Maybe (Notification) , "ForwardingAddressId" :: Maybe (AddressId) } -> {"JobType" :: (JobType) , "Resources" :: (JobResource) , "Description" :: Maybe (String) , "AddressId" :: (AddressId) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: (RoleARN) , "SnowballType" :: Maybe (SnowballType) , "ShippingOption" :: (ShippingOption) , "Notification" :: Maybe (Notification) , "ForwardingAddressId" :: Maybe (AddressId) } ) -> CreateClusterRequest
+newCreateClusterRequest' _AddressId _JobType _Resources _RoleARN _ShippingOption customize = (CreateClusterRequest <<< customize) { "AddressId": _AddressId, "JobType": _JobType, "Resources": _Resources, "RoleARN": _RoleARN, "ShippingOption": _ShippingOption, "Description": Nothing, "ForwardingAddressId": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "SnowballType": Nothing }
 
 
 
 newtype CreateClusterResult = CreateClusterResult 
-  { "ClusterId" :: NullOrUndefined (ClusterId)
+  { "ClusterId" :: Maybe (ClusterId)
   }
 derive instance newtypeCreateClusterResult :: Newtype CreateClusterResult _
 derive instance repGenericCreateClusterResult :: Generic CreateClusterResult _
@@ -313,28 +312,28 @@ instance encodeCreateClusterResult :: Encode CreateClusterResult where encode = 
 
 -- | Constructs CreateClusterResult from required parameters
 newCreateClusterResult :: CreateClusterResult
-newCreateClusterResult  = CreateClusterResult { "ClusterId": (NullOrUndefined Nothing) }
+newCreateClusterResult  = CreateClusterResult { "ClusterId": Nothing }
 
 -- | Constructs CreateClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateClusterResult' :: ( { "ClusterId" :: NullOrUndefined (ClusterId) } -> {"ClusterId" :: NullOrUndefined (ClusterId) } ) -> CreateClusterResult
-newCreateClusterResult'  customize = (CreateClusterResult <<< customize) { "ClusterId": (NullOrUndefined Nothing) }
+newCreateClusterResult' :: ( { "ClusterId" :: Maybe (ClusterId) } -> {"ClusterId" :: Maybe (ClusterId) } ) -> CreateClusterResult
+newCreateClusterResult'  customize = (CreateClusterResult <<< customize) { "ClusterId": Nothing }
 
 
 
 newtype CreateJobRequest = CreateJobRequest 
-  { "JobType" :: NullOrUndefined (JobType)
-  , "Resources" :: NullOrUndefined (JobResource)
-  , "Description" :: NullOrUndefined (String)
-  , "AddressId" :: NullOrUndefined (AddressId)
-  , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN)
-  , "RoleARN" :: NullOrUndefined (RoleARN)
-  , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity)
-  , "ShippingOption" :: NullOrUndefined (ShippingOption)
-  , "Notification" :: NullOrUndefined (Notification)
-  , "ClusterId" :: NullOrUndefined (ClusterId)
-  , "SnowballType" :: NullOrUndefined (SnowballType)
-  , "ForwardingAddressId" :: NullOrUndefined (AddressId)
+  { "JobType" :: Maybe (JobType)
+  , "Resources" :: Maybe (JobResource)
+  , "Description" :: Maybe (String)
+  , "AddressId" :: Maybe (AddressId)
+  , "KmsKeyARN" :: Maybe (KmsKeyARN)
+  , "RoleARN" :: Maybe (RoleARN)
+  , "SnowballCapacityPreference" :: Maybe (SnowballCapacity)
+  , "ShippingOption" :: Maybe (ShippingOption)
+  , "Notification" :: Maybe (Notification)
+  , "ClusterId" :: Maybe (ClusterId)
+  , "SnowballType" :: Maybe (SnowballType)
+  , "ForwardingAddressId" :: Maybe (AddressId)
   }
 derive instance newtypeCreateJobRequest :: Newtype CreateJobRequest _
 derive instance repGenericCreateJobRequest :: Generic CreateJobRequest _
@@ -344,17 +343,17 @@ instance encodeCreateJobRequest :: Encode CreateJobRequest where encode = generi
 
 -- | Constructs CreateJobRequest from required parameters
 newCreateJobRequest :: CreateJobRequest
-newCreateJobRequest  = CreateJobRequest { "AddressId": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing), "SnowballCapacityPreference": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newCreateJobRequest  = CreateJobRequest { "AddressId": Nothing, "ClusterId": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "JobType": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing, "SnowballCapacityPreference": Nothing, "SnowballType": Nothing }
 
 -- | Constructs CreateJobRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateJobRequest' :: ( { "JobType" :: NullOrUndefined (JobType) , "Resources" :: NullOrUndefined (JobResource) , "Description" :: NullOrUndefined (String) , "AddressId" :: NullOrUndefined (AddressId) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: NullOrUndefined (RoleARN) , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ClusterId" :: NullOrUndefined (ClusterId) , "SnowballType" :: NullOrUndefined (SnowballType) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> {"JobType" :: NullOrUndefined (JobType) , "Resources" :: NullOrUndefined (JobResource) , "Description" :: NullOrUndefined (String) , "AddressId" :: NullOrUndefined (AddressId) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: NullOrUndefined (RoleARN) , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ClusterId" :: NullOrUndefined (ClusterId) , "SnowballType" :: NullOrUndefined (SnowballType) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } ) -> CreateJobRequest
-newCreateJobRequest'  customize = (CreateJobRequest <<< customize) { "AddressId": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing), "SnowballCapacityPreference": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newCreateJobRequest' :: ( { "JobType" :: Maybe (JobType) , "Resources" :: Maybe (JobResource) , "Description" :: Maybe (String) , "AddressId" :: Maybe (AddressId) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: Maybe (RoleARN) , "SnowballCapacityPreference" :: Maybe (SnowballCapacity) , "ShippingOption" :: Maybe (ShippingOption) , "Notification" :: Maybe (Notification) , "ClusterId" :: Maybe (ClusterId) , "SnowballType" :: Maybe (SnowballType) , "ForwardingAddressId" :: Maybe (AddressId) } -> {"JobType" :: Maybe (JobType) , "Resources" :: Maybe (JobResource) , "Description" :: Maybe (String) , "AddressId" :: Maybe (AddressId) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: Maybe (RoleARN) , "SnowballCapacityPreference" :: Maybe (SnowballCapacity) , "ShippingOption" :: Maybe (ShippingOption) , "Notification" :: Maybe (Notification) , "ClusterId" :: Maybe (ClusterId) , "SnowballType" :: Maybe (SnowballType) , "ForwardingAddressId" :: Maybe (AddressId) } ) -> CreateJobRequest
+newCreateJobRequest'  customize = (CreateJobRequest <<< customize) { "AddressId": Nothing, "ClusterId": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "JobType": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing, "SnowballCapacityPreference": Nothing, "SnowballType": Nothing }
 
 
 
 newtype CreateJobResult = CreateJobResult 
-  { "JobId" :: NullOrUndefined (JobId)
+  { "JobId" :: Maybe (JobId)
   }
 derive instance newtypeCreateJobResult :: Newtype CreateJobResult _
 derive instance repGenericCreateJobResult :: Generic CreateJobResult _
@@ -364,21 +363,21 @@ instance encodeCreateJobResult :: Encode CreateJobResult where encode = genericE
 
 -- | Constructs CreateJobResult from required parameters
 newCreateJobResult :: CreateJobResult
-newCreateJobResult  = CreateJobResult { "JobId": (NullOrUndefined Nothing) }
+newCreateJobResult  = CreateJobResult { "JobId": Nothing }
 
 -- | Constructs CreateJobResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newCreateJobResult' :: ( { "JobId" :: NullOrUndefined (JobId) } -> {"JobId" :: NullOrUndefined (JobId) } ) -> CreateJobResult
-newCreateJobResult'  customize = (CreateJobResult <<< customize) { "JobId": (NullOrUndefined Nothing) }
+newCreateJobResult' :: ( { "JobId" :: Maybe (JobId) } -> {"JobId" :: Maybe (JobId) } ) -> CreateJobResult
+newCreateJobResult'  customize = (CreateJobResult <<< customize) { "JobId": Nothing }
 
 
 
 -- | <p>Defines the real-time status of a Snowball's data transfer while the appliance is at AWS. This data is only available while a job has a <code>JobState</code> value of <code>InProgress</code>, for both import and export jobs.</p>
 newtype DataTransfer = DataTransfer 
-  { "BytesTransferred" :: NullOrUndefined (Number)
-  , "ObjectsTransferred" :: NullOrUndefined (Number)
-  , "TotalBytes" :: NullOrUndefined (Number)
-  , "TotalObjects" :: NullOrUndefined (Number)
+  { "BytesTransferred" :: Maybe (Number)
+  , "ObjectsTransferred" :: Maybe (Number)
+  , "TotalBytes" :: Maybe (Number)
+  , "TotalObjects" :: Maybe (Number)
   }
 derive instance newtypeDataTransfer :: Newtype DataTransfer _
 derive instance repGenericDataTransfer :: Generic DataTransfer _
@@ -388,12 +387,12 @@ instance encodeDataTransfer :: Encode DataTransfer where encode = genericEncode 
 
 -- | Constructs DataTransfer from required parameters
 newDataTransfer :: DataTransfer
-newDataTransfer  = DataTransfer { "BytesTransferred": (NullOrUndefined Nothing), "ObjectsTransferred": (NullOrUndefined Nothing), "TotalBytes": (NullOrUndefined Nothing), "TotalObjects": (NullOrUndefined Nothing) }
+newDataTransfer  = DataTransfer { "BytesTransferred": Nothing, "ObjectsTransferred": Nothing, "TotalBytes": Nothing, "TotalObjects": Nothing }
 
 -- | Constructs DataTransfer's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDataTransfer' :: ( { "BytesTransferred" :: NullOrUndefined (Number) , "ObjectsTransferred" :: NullOrUndefined (Number) , "TotalBytes" :: NullOrUndefined (Number) , "TotalObjects" :: NullOrUndefined (Number) } -> {"BytesTransferred" :: NullOrUndefined (Number) , "ObjectsTransferred" :: NullOrUndefined (Number) , "TotalBytes" :: NullOrUndefined (Number) , "TotalObjects" :: NullOrUndefined (Number) } ) -> DataTransfer
-newDataTransfer'  customize = (DataTransfer <<< customize) { "BytesTransferred": (NullOrUndefined Nothing), "ObjectsTransferred": (NullOrUndefined Nothing), "TotalBytes": (NullOrUndefined Nothing), "TotalObjects": (NullOrUndefined Nothing) }
+newDataTransfer' :: ( { "BytesTransferred" :: Maybe (Number) , "ObjectsTransferred" :: Maybe (Number) , "TotalBytes" :: Maybe (Number) , "TotalObjects" :: Maybe (Number) } -> {"BytesTransferred" :: Maybe (Number) , "ObjectsTransferred" :: Maybe (Number) , "TotalBytes" :: Maybe (Number) , "TotalObjects" :: Maybe (Number) } ) -> DataTransfer
+newDataTransfer'  customize = (DataTransfer <<< customize) { "BytesTransferred": Nothing, "ObjectsTransferred": Nothing, "TotalBytes": Nothing, "TotalObjects": Nothing }
 
 
 
@@ -418,7 +417,7 @@ newDescribeAddressRequest' _AddressId customize = (DescribeAddressRequest <<< cu
 
 
 newtype DescribeAddressResult = DescribeAddressResult 
-  { "Address" :: NullOrUndefined (Address)
+  { "Address" :: Maybe (Address)
   }
 derive instance newtypeDescribeAddressResult :: Newtype DescribeAddressResult _
 derive instance repGenericDescribeAddressResult :: Generic DescribeAddressResult _
@@ -428,18 +427,18 @@ instance encodeDescribeAddressResult :: Encode DescribeAddressResult where encod
 
 -- | Constructs DescribeAddressResult from required parameters
 newDescribeAddressResult :: DescribeAddressResult
-newDescribeAddressResult  = DescribeAddressResult { "Address": (NullOrUndefined Nothing) }
+newDescribeAddressResult  = DescribeAddressResult { "Address": Nothing }
 
 -- | Constructs DescribeAddressResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAddressResult' :: ( { "Address" :: NullOrUndefined (Address) } -> {"Address" :: NullOrUndefined (Address) } ) -> DescribeAddressResult
-newDescribeAddressResult'  customize = (DescribeAddressResult <<< customize) { "Address": (NullOrUndefined Nothing) }
+newDescribeAddressResult' :: ( { "Address" :: Maybe (Address) } -> {"Address" :: Maybe (Address) } ) -> DescribeAddressResult
+newDescribeAddressResult'  customize = (DescribeAddressResult <<< customize) { "Address": Nothing }
 
 
 
 newtype DescribeAddressesRequest = DescribeAddressesRequest 
-  { "MaxResults" :: NullOrUndefined (ListLimit)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (ListLimit)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeAddressesRequest :: Newtype DescribeAddressesRequest _
 derive instance repGenericDescribeAddressesRequest :: Generic DescribeAddressesRequest _
@@ -449,18 +448,18 @@ instance encodeDescribeAddressesRequest :: Encode DescribeAddressesRequest where
 
 -- | Constructs DescribeAddressesRequest from required parameters
 newDescribeAddressesRequest :: DescribeAddressesRequest
-newDescribeAddressesRequest  = DescribeAddressesRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAddressesRequest  = DescribeAddressesRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAddressesRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAddressesRequest' :: ( { "MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeAddressesRequest
-newDescribeAddressesRequest'  customize = (DescribeAddressesRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAddressesRequest' :: ( { "MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } ) -> DescribeAddressesRequest
+newDescribeAddressesRequest'  customize = (DescribeAddressesRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype DescribeAddressesResult = DescribeAddressesResult 
-  { "Addresses" :: NullOrUndefined (AddressList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "Addresses" :: Maybe (AddressList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeDescribeAddressesResult :: Newtype DescribeAddressesResult _
 derive instance repGenericDescribeAddressesResult :: Generic DescribeAddressesResult _
@@ -470,12 +469,12 @@ instance encodeDescribeAddressesResult :: Encode DescribeAddressesResult where e
 
 -- | Constructs DescribeAddressesResult from required parameters
 newDescribeAddressesResult :: DescribeAddressesResult
-newDescribeAddressesResult  = DescribeAddressesResult { "Addresses": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAddressesResult  = DescribeAddressesResult { "Addresses": Nothing, "NextToken": Nothing }
 
 -- | Constructs DescribeAddressesResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeAddressesResult' :: ( { "Addresses" :: NullOrUndefined (AddressList) , "NextToken" :: NullOrUndefined (String) } -> {"Addresses" :: NullOrUndefined (AddressList) , "NextToken" :: NullOrUndefined (String) } ) -> DescribeAddressesResult
-newDescribeAddressesResult'  customize = (DescribeAddressesResult <<< customize) { "Addresses": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newDescribeAddressesResult' :: ( { "Addresses" :: Maybe (AddressList) , "NextToken" :: Maybe (String) } -> {"Addresses" :: Maybe (AddressList) , "NextToken" :: Maybe (String) } ) -> DescribeAddressesResult
+newDescribeAddressesResult'  customize = (DescribeAddressesResult <<< customize) { "Addresses": Nothing, "NextToken": Nothing }
 
 
 
@@ -500,7 +499,7 @@ newDescribeClusterRequest' _ClusterId customize = (DescribeClusterRequest <<< cu
 
 
 newtype DescribeClusterResult = DescribeClusterResult 
-  { "ClusterMetadata" :: NullOrUndefined (ClusterMetadata)
+  { "ClusterMetadata" :: Maybe (ClusterMetadata)
   }
 derive instance newtypeDescribeClusterResult :: Newtype DescribeClusterResult _
 derive instance repGenericDescribeClusterResult :: Generic DescribeClusterResult _
@@ -510,12 +509,12 @@ instance encodeDescribeClusterResult :: Encode DescribeClusterResult where encod
 
 -- | Constructs DescribeClusterResult from required parameters
 newDescribeClusterResult :: DescribeClusterResult
-newDescribeClusterResult  = DescribeClusterResult { "ClusterMetadata": (NullOrUndefined Nothing) }
+newDescribeClusterResult  = DescribeClusterResult { "ClusterMetadata": Nothing }
 
 -- | Constructs DescribeClusterResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeClusterResult' :: ( { "ClusterMetadata" :: NullOrUndefined (ClusterMetadata) } -> {"ClusterMetadata" :: NullOrUndefined (ClusterMetadata) } ) -> DescribeClusterResult
-newDescribeClusterResult'  customize = (DescribeClusterResult <<< customize) { "ClusterMetadata": (NullOrUndefined Nothing) }
+newDescribeClusterResult' :: ( { "ClusterMetadata" :: Maybe (ClusterMetadata) } -> {"ClusterMetadata" :: Maybe (ClusterMetadata) } ) -> DescribeClusterResult
+newDescribeClusterResult'  customize = (DescribeClusterResult <<< customize) { "ClusterMetadata": Nothing }
 
 
 
@@ -540,8 +539,8 @@ newDescribeJobRequest' _JobId customize = (DescribeJobRequest <<< customize) { "
 
 
 newtype DescribeJobResult = DescribeJobResult 
-  { "JobMetadata" :: NullOrUndefined (JobMetadata)
-  , "SubJobMetadata" :: NullOrUndefined (JobMetadataList)
+  { "JobMetadata" :: Maybe (JobMetadata)
+  , "SubJobMetadata" :: Maybe (JobMetadataList)
   }
 derive instance newtypeDescribeJobResult :: Newtype DescribeJobResult _
 derive instance repGenericDescribeJobResult :: Generic DescribeJobResult _
@@ -551,18 +550,18 @@ instance encodeDescribeJobResult :: Encode DescribeJobResult where encode = gene
 
 -- | Constructs DescribeJobResult from required parameters
 newDescribeJobResult :: DescribeJobResult
-newDescribeJobResult  = DescribeJobResult { "JobMetadata": (NullOrUndefined Nothing), "SubJobMetadata": (NullOrUndefined Nothing) }
+newDescribeJobResult  = DescribeJobResult { "JobMetadata": Nothing, "SubJobMetadata": Nothing }
 
 -- | Constructs DescribeJobResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newDescribeJobResult' :: ( { "JobMetadata" :: NullOrUndefined (JobMetadata) , "SubJobMetadata" :: NullOrUndefined (JobMetadataList) } -> {"JobMetadata" :: NullOrUndefined (JobMetadata) , "SubJobMetadata" :: NullOrUndefined (JobMetadataList) } ) -> DescribeJobResult
-newDescribeJobResult'  customize = (DescribeJobResult <<< customize) { "JobMetadata": (NullOrUndefined Nothing), "SubJobMetadata": (NullOrUndefined Nothing) }
+newDescribeJobResult' :: ( { "JobMetadata" :: Maybe (JobMetadata) , "SubJobMetadata" :: Maybe (JobMetadataList) } -> {"JobMetadata" :: Maybe (JobMetadata) , "SubJobMetadata" :: Maybe (JobMetadataList) } ) -> DescribeJobResult
+newDescribeJobResult'  customize = (DescribeJobResult <<< customize) { "JobMetadata": Nothing, "SubJobMetadata": Nothing }
 
 
 
 -- | <p>The container for the <a>EventTriggerDefinition$EventResourceARN</a>.</p>
 newtype EventTriggerDefinition = EventTriggerDefinition 
-  { "EventResourceARN" :: NullOrUndefined (ResourceARN)
+  { "EventResourceARN" :: Maybe (ResourceARN)
   }
 derive instance newtypeEventTriggerDefinition :: Newtype EventTriggerDefinition _
 derive instance repGenericEventTriggerDefinition :: Generic EventTriggerDefinition _
@@ -572,12 +571,12 @@ instance encodeEventTriggerDefinition :: Encode EventTriggerDefinition where enc
 
 -- | Constructs EventTriggerDefinition from required parameters
 newEventTriggerDefinition :: EventTriggerDefinition
-newEventTriggerDefinition  = EventTriggerDefinition { "EventResourceARN": (NullOrUndefined Nothing) }
+newEventTriggerDefinition  = EventTriggerDefinition { "EventResourceARN": Nothing }
 
 -- | Constructs EventTriggerDefinition's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newEventTriggerDefinition' :: ( { "EventResourceARN" :: NullOrUndefined (ResourceARN) } -> {"EventResourceARN" :: NullOrUndefined (ResourceARN) } ) -> EventTriggerDefinition
-newEventTriggerDefinition'  customize = (EventTriggerDefinition <<< customize) { "EventResourceARN": (NullOrUndefined Nothing) }
+newEventTriggerDefinition' :: ( { "EventResourceARN" :: Maybe (ResourceARN) } -> {"EventResourceARN" :: Maybe (ResourceARN) } ) -> EventTriggerDefinition
+newEventTriggerDefinition'  customize = (EventTriggerDefinition <<< customize) { "EventResourceARN": Nothing }
 
 
 
@@ -611,7 +610,7 @@ newGetJobManifestRequest' _JobId customize = (GetJobManifestRequest <<< customiz
 
 
 newtype GetJobManifestResult = GetJobManifestResult 
-  { "ManifestURI" :: NullOrUndefined (String)
+  { "ManifestURI" :: Maybe (String)
   }
 derive instance newtypeGetJobManifestResult :: Newtype GetJobManifestResult _
 derive instance repGenericGetJobManifestResult :: Generic GetJobManifestResult _
@@ -621,12 +620,12 @@ instance encodeGetJobManifestResult :: Encode GetJobManifestResult where encode 
 
 -- | Constructs GetJobManifestResult from required parameters
 newGetJobManifestResult :: GetJobManifestResult
-newGetJobManifestResult  = GetJobManifestResult { "ManifestURI": (NullOrUndefined Nothing) }
+newGetJobManifestResult  = GetJobManifestResult { "ManifestURI": Nothing }
 
 -- | Constructs GetJobManifestResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobManifestResult' :: ( { "ManifestURI" :: NullOrUndefined (String) } -> {"ManifestURI" :: NullOrUndefined (String) } ) -> GetJobManifestResult
-newGetJobManifestResult'  customize = (GetJobManifestResult <<< customize) { "ManifestURI": (NullOrUndefined Nothing) }
+newGetJobManifestResult' :: ( { "ManifestURI" :: Maybe (String) } -> {"ManifestURI" :: Maybe (String) } ) -> GetJobManifestResult
+newGetJobManifestResult'  customize = (GetJobManifestResult <<< customize) { "ManifestURI": Nothing }
 
 
 
@@ -651,7 +650,7 @@ newGetJobUnlockCodeRequest' _JobId customize = (GetJobUnlockCodeRequest <<< cust
 
 
 newtype GetJobUnlockCodeResult = GetJobUnlockCodeResult 
-  { "UnlockCode" :: NullOrUndefined (String)
+  { "UnlockCode" :: Maybe (String)
   }
 derive instance newtypeGetJobUnlockCodeResult :: Newtype GetJobUnlockCodeResult _
 derive instance repGenericGetJobUnlockCodeResult :: Generic GetJobUnlockCodeResult _
@@ -661,12 +660,12 @@ instance encodeGetJobUnlockCodeResult :: Encode GetJobUnlockCodeResult where enc
 
 -- | Constructs GetJobUnlockCodeResult from required parameters
 newGetJobUnlockCodeResult :: GetJobUnlockCodeResult
-newGetJobUnlockCodeResult  = GetJobUnlockCodeResult { "UnlockCode": (NullOrUndefined Nothing) }
+newGetJobUnlockCodeResult  = GetJobUnlockCodeResult { "UnlockCode": Nothing }
 
 -- | Constructs GetJobUnlockCodeResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetJobUnlockCodeResult' :: ( { "UnlockCode" :: NullOrUndefined (String) } -> {"UnlockCode" :: NullOrUndefined (String) } ) -> GetJobUnlockCodeResult
-newGetJobUnlockCodeResult'  customize = (GetJobUnlockCodeResult <<< customize) { "UnlockCode": (NullOrUndefined Nothing) }
+newGetJobUnlockCodeResult' :: ( { "UnlockCode" :: Maybe (String) } -> {"UnlockCode" :: Maybe (String) } ) -> GetJobUnlockCodeResult
+newGetJobUnlockCodeResult'  customize = (GetJobUnlockCodeResult <<< customize) { "UnlockCode": Nothing }
 
 
 
@@ -680,8 +679,8 @@ instance encodeGetSnowballUsageRequest :: Encode GetSnowballUsageRequest where e
 
 
 newtype GetSnowballUsageResult = GetSnowballUsageResult 
-  { "SnowballLimit" :: NullOrUndefined (Int)
-  , "SnowballsInUse" :: NullOrUndefined (Int)
+  { "SnowballLimit" :: Maybe (Int)
+  , "SnowballsInUse" :: Maybe (Int)
   }
 derive instance newtypeGetSnowballUsageResult :: Newtype GetSnowballUsageResult _
 derive instance repGenericGetSnowballUsageResult :: Generic GetSnowballUsageResult _
@@ -691,18 +690,18 @@ instance encodeGetSnowballUsageResult :: Encode GetSnowballUsageResult where enc
 
 -- | Constructs GetSnowballUsageResult from required parameters
 newGetSnowballUsageResult :: GetSnowballUsageResult
-newGetSnowballUsageResult  = GetSnowballUsageResult { "SnowballLimit": (NullOrUndefined Nothing), "SnowballsInUse": (NullOrUndefined Nothing) }
+newGetSnowballUsageResult  = GetSnowballUsageResult { "SnowballLimit": Nothing, "SnowballsInUse": Nothing }
 
 -- | Constructs GetSnowballUsageResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newGetSnowballUsageResult' :: ( { "SnowballLimit" :: NullOrUndefined (Int) , "SnowballsInUse" :: NullOrUndefined (Int) } -> {"SnowballLimit" :: NullOrUndefined (Int) , "SnowballsInUse" :: NullOrUndefined (Int) } ) -> GetSnowballUsageResult
-newGetSnowballUsageResult'  customize = (GetSnowballUsageResult <<< customize) { "SnowballLimit": (NullOrUndefined Nothing), "SnowballsInUse": (NullOrUndefined Nothing) }
+newGetSnowballUsageResult' :: ( { "SnowballLimit" :: Maybe (Int) , "SnowballsInUse" :: Maybe (Int) } -> {"SnowballLimit" :: Maybe (Int) , "SnowballsInUse" :: Maybe (Int) } ) -> GetSnowballUsageResult
+newGetSnowballUsageResult'  customize = (GetSnowballUsageResult <<< customize) { "SnowballLimit": Nothing, "SnowballsInUse": Nothing }
 
 
 
 -- | <p>The address provided was invalid. Check the address with your region's carrier, and try again.</p>
 newtype InvalidAddressException = InvalidAddressException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidAddressException :: Newtype InvalidAddressException _
 derive instance repGenericInvalidAddressException :: Generic InvalidAddressException _
@@ -712,18 +711,18 @@ instance encodeInvalidAddressException :: Encode InvalidAddressException where e
 
 -- | Constructs InvalidAddressException from required parameters
 newInvalidAddressException :: InvalidAddressException
-newInvalidAddressException  = InvalidAddressException { "Message": (NullOrUndefined Nothing) }
+newInvalidAddressException  = InvalidAddressException { "Message": Nothing }
 
 -- | Constructs InvalidAddressException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidAddressException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidAddressException
-newInvalidAddressException'  customize = (InvalidAddressException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidAddressException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidAddressException
+newInvalidAddressException'  customize = (InvalidAddressException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Job or cluster creation failed. One ore more inputs were invalid. Confirm that the <a>CreateClusterRequest$SnowballType</a> value supports your <a>CreateJobRequest$JobType</a>, and try again.</p>
 newtype InvalidInputCombinationException = InvalidInputCombinationException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidInputCombinationException :: Newtype InvalidInputCombinationException _
 derive instance repGenericInvalidInputCombinationException :: Generic InvalidInputCombinationException _
@@ -733,18 +732,18 @@ instance encodeInvalidInputCombinationException :: Encode InvalidInputCombinatio
 
 -- | Constructs InvalidInputCombinationException from required parameters
 newInvalidInputCombinationException :: InvalidInputCombinationException
-newInvalidInputCombinationException  = InvalidInputCombinationException { "Message": (NullOrUndefined Nothing) }
+newInvalidInputCombinationException  = InvalidInputCombinationException { "Message": Nothing }
 
 -- | Constructs InvalidInputCombinationException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidInputCombinationException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidInputCombinationException
-newInvalidInputCombinationException'  customize = (InvalidInputCombinationException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidInputCombinationException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidInputCombinationException
+newInvalidInputCombinationException'  customize = (InvalidInputCombinationException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The action can't be performed because the job's current state doesn't allow that action to be performed.</p>
 newtype InvalidJobStateException = InvalidJobStateException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidJobStateException :: Newtype InvalidJobStateException _
 derive instance repGenericInvalidJobStateException :: Generic InvalidJobStateException _
@@ -754,18 +753,18 @@ instance encodeInvalidJobStateException :: Encode InvalidJobStateException where
 
 -- | Constructs InvalidJobStateException from required parameters
 newInvalidJobStateException :: InvalidJobStateException
-newInvalidJobStateException  = InvalidJobStateException { "Message": (NullOrUndefined Nothing) }
+newInvalidJobStateException  = InvalidJobStateException { "Message": Nothing }
 
 -- | Constructs InvalidJobStateException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidJobStateException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidJobStateException
-newInvalidJobStateException'  customize = (InvalidJobStateException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidJobStateException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidJobStateException
+newInvalidJobStateException'  customize = (InvalidJobStateException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The <code>NextToken</code> string was altered unexpectedly, and the operation has stopped. Run the operation without changing the <code>NextToken</code> string, and try again.</p>
 newtype InvalidNextTokenException = InvalidNextTokenException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidNextTokenException :: Newtype InvalidNextTokenException _
 derive instance repGenericInvalidNextTokenException :: Generic InvalidNextTokenException _
@@ -775,18 +774,18 @@ instance encodeInvalidNextTokenException :: Encode InvalidNextTokenException whe
 
 -- | Constructs InvalidNextTokenException from required parameters
 newInvalidNextTokenException :: InvalidNextTokenException
-newInvalidNextTokenException  = InvalidNextTokenException { "Message": (NullOrUndefined Nothing) }
+newInvalidNextTokenException  = InvalidNextTokenException { "Message": Nothing }
 
 -- | Constructs InvalidNextTokenException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidNextTokenException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidNextTokenException
-newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidNextTokenException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidNextTokenException
+newInvalidNextTokenException'  customize = (InvalidNextTokenException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>The specified resource can't be found. Check the information you provided in your last request, and try again.</p>
 newtype InvalidResourceException = InvalidResourceException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeInvalidResourceException :: Newtype InvalidResourceException _
 derive instance repGenericInvalidResourceException :: Generic InvalidResourceException _
@@ -796,12 +795,12 @@ instance encodeInvalidResourceException :: Encode InvalidResourceException where
 
 -- | Constructs InvalidResourceException from required parameters
 newInvalidResourceException :: InvalidResourceException
-newInvalidResourceException  = InvalidResourceException { "Message": (NullOrUndefined Nothing) }
+newInvalidResourceException  = InvalidResourceException { "Message": Nothing }
 
 -- | Constructs InvalidResourceException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newInvalidResourceException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> InvalidResourceException
-newInvalidResourceException'  customize = (InvalidResourceException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newInvalidResourceException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> InvalidResourceException
+newInvalidResourceException'  customize = (InvalidResourceException <<< customize) { "Message": Nothing }
 
 
 
@@ -816,13 +815,13 @@ instance encodeJobId :: Encode JobId where encode = genericEncode options
 
 -- | <p>Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of an export job.</p>
 newtype JobListEntry = JobListEntry 
-  { "JobId" :: NullOrUndefined (String)
-  , "JobState" :: NullOrUndefined (JobState)
-  , "IsMaster" :: NullOrUndefined (Boolean)
-  , "JobType" :: NullOrUndefined (JobType)
-  , "SnowballType" :: NullOrUndefined (SnowballType)
-  , "CreationDate" :: NullOrUndefined (Types.Timestamp)
-  , "Description" :: NullOrUndefined (String)
+  { "JobId" :: Maybe (String)
+  , "JobState" :: Maybe (JobState)
+  , "IsMaster" :: Maybe (Boolean)
+  , "JobType" :: Maybe (JobType)
+  , "SnowballType" :: Maybe (SnowballType)
+  , "CreationDate" :: Maybe (Types.Timestamp)
+  , "Description" :: Maybe (String)
   }
 derive instance newtypeJobListEntry :: Newtype JobListEntry _
 derive instance repGenericJobListEntry :: Generic JobListEntry _
@@ -832,12 +831,12 @@ instance encodeJobListEntry :: Encode JobListEntry where encode = genericEncode 
 
 -- | Constructs JobListEntry from required parameters
 newJobListEntry :: JobListEntry
-newJobListEntry  = JobListEntry { "CreationDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsMaster": (NullOrUndefined Nothing), "JobId": (NullOrUndefined Nothing), "JobState": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newJobListEntry  = JobListEntry { "CreationDate": Nothing, "Description": Nothing, "IsMaster": Nothing, "JobId": Nothing, "JobState": Nothing, "JobType": Nothing, "SnowballType": Nothing }
 
 -- | Constructs JobListEntry's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobListEntry' :: ( { "JobId" :: NullOrUndefined (String) , "JobState" :: NullOrUndefined (JobState) , "IsMaster" :: NullOrUndefined (Boolean) , "JobType" :: NullOrUndefined (JobType) , "SnowballType" :: NullOrUndefined (SnowballType) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Description" :: NullOrUndefined (String) } -> {"JobId" :: NullOrUndefined (String) , "JobState" :: NullOrUndefined (JobState) , "IsMaster" :: NullOrUndefined (Boolean) , "JobType" :: NullOrUndefined (JobType) , "SnowballType" :: NullOrUndefined (SnowballType) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Description" :: NullOrUndefined (String) } ) -> JobListEntry
-newJobListEntry'  customize = (JobListEntry <<< customize) { "CreationDate": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "IsMaster": (NullOrUndefined Nothing), "JobId": (NullOrUndefined Nothing), "JobState": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newJobListEntry' :: ( { "JobId" :: Maybe (String) , "JobState" :: Maybe (JobState) , "IsMaster" :: Maybe (Boolean) , "JobType" :: Maybe (JobType) , "SnowballType" :: Maybe (SnowballType) , "CreationDate" :: Maybe (Types.Timestamp) , "Description" :: Maybe (String) } -> {"JobId" :: Maybe (String) , "JobState" :: Maybe (JobState) , "IsMaster" :: Maybe (Boolean) , "JobType" :: Maybe (JobType) , "SnowballType" :: Maybe (SnowballType) , "CreationDate" :: Maybe (Types.Timestamp) , "Description" :: Maybe (String) } ) -> JobListEntry
+newJobListEntry'  customize = (JobListEntry <<< customize) { "CreationDate": Nothing, "Description": Nothing, "IsMaster": Nothing, "JobId": Nothing, "JobState": Nothing, "JobType": Nothing, "SnowballType": Nothing }
 
 
 
@@ -852,9 +851,9 @@ instance encodeJobListEntryList :: Encode JobListEntryList where encode = generi
 
 -- | <p>Contains job logs. Whenever Snowball is used to import data into or export data out of Amazon S3, you'll have the option of downloading a PDF job report. Job logs are returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type. The job logs can be accessed for up to 60 minutes after this request has been made. To access any of the job logs after 60 minutes have passed, you'll have to make another call to the <code>DescribeJob</code> action.</p> <p>For import jobs, the PDF job report becomes available at the end of the import process. For export jobs, your job report typically becomes available while the Snowball for your job part is being delivered to you.</p> <p>The job report provides you insight into the state of your Amazon S3 data transfer. The report includes details about your job or job part for your records.</p> <p>For deeper visibility into the status of your transferred objects, you can look at the two associated logs: a success log and a failure log. The logs are saved in comma-separated value (CSV) format, and the name of each log includes the ID of the job or job part that the log describes.</p>
 newtype JobLogs = JobLogs 
-  { "JobCompletionReportURI" :: NullOrUndefined (String)
-  , "JobSuccessLogURI" :: NullOrUndefined (String)
-  , "JobFailureLogURI" :: NullOrUndefined (String)
+  { "JobCompletionReportURI" :: Maybe (String)
+  , "JobSuccessLogURI" :: Maybe (String)
+  , "JobFailureLogURI" :: Maybe (String)
   }
 derive instance newtypeJobLogs :: Newtype JobLogs _
 derive instance repGenericJobLogs :: Generic JobLogs _
@@ -864,34 +863,34 @@ instance encodeJobLogs :: Encode JobLogs where encode = genericEncode options
 
 -- | Constructs JobLogs from required parameters
 newJobLogs :: JobLogs
-newJobLogs  = JobLogs { "JobCompletionReportURI": (NullOrUndefined Nothing), "JobFailureLogURI": (NullOrUndefined Nothing), "JobSuccessLogURI": (NullOrUndefined Nothing) }
+newJobLogs  = JobLogs { "JobCompletionReportURI": Nothing, "JobFailureLogURI": Nothing, "JobSuccessLogURI": Nothing }
 
 -- | Constructs JobLogs's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobLogs' :: ( { "JobCompletionReportURI" :: NullOrUndefined (String) , "JobSuccessLogURI" :: NullOrUndefined (String) , "JobFailureLogURI" :: NullOrUndefined (String) } -> {"JobCompletionReportURI" :: NullOrUndefined (String) , "JobSuccessLogURI" :: NullOrUndefined (String) , "JobFailureLogURI" :: NullOrUndefined (String) } ) -> JobLogs
-newJobLogs'  customize = (JobLogs <<< customize) { "JobCompletionReportURI": (NullOrUndefined Nothing), "JobFailureLogURI": (NullOrUndefined Nothing), "JobSuccessLogURI": (NullOrUndefined Nothing) }
+newJobLogs' :: ( { "JobCompletionReportURI" :: Maybe (String) , "JobSuccessLogURI" :: Maybe (String) , "JobFailureLogURI" :: Maybe (String) } -> {"JobCompletionReportURI" :: Maybe (String) , "JobSuccessLogURI" :: Maybe (String) , "JobFailureLogURI" :: Maybe (String) } ) -> JobLogs
+newJobLogs'  customize = (JobLogs <<< customize) { "JobCompletionReportURI": Nothing, "JobFailureLogURI": Nothing, "JobSuccessLogURI": Nothing }
 
 
 
 -- | <p>Contains information about a specific job including shipping information, job status, and other important metadata. This information is returned as a part of the response syntax of the <code>DescribeJob</code> action.</p>
 newtype JobMetadata = JobMetadata 
-  { "JobId" :: NullOrUndefined (String)
-  , "JobState" :: NullOrUndefined (JobState)
-  , "JobType" :: NullOrUndefined (JobType)
-  , "SnowballType" :: NullOrUndefined (SnowballType)
-  , "CreationDate" :: NullOrUndefined (Types.Timestamp)
-  , "Resources" :: NullOrUndefined (JobResource)
-  , "Description" :: NullOrUndefined (String)
-  , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN)
-  , "RoleARN" :: NullOrUndefined (RoleARN)
-  , "AddressId" :: NullOrUndefined (AddressId)
-  , "ShippingDetails" :: NullOrUndefined (ShippingDetails)
-  , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity)
-  , "Notification" :: NullOrUndefined (Notification)
-  , "DataTransferProgress" :: NullOrUndefined (DataTransfer)
-  , "JobLogInfo" :: NullOrUndefined (JobLogs)
-  , "ClusterId" :: NullOrUndefined (String)
-  , "ForwardingAddressId" :: NullOrUndefined (AddressId)
+  { "JobId" :: Maybe (String)
+  , "JobState" :: Maybe (JobState)
+  , "JobType" :: Maybe (JobType)
+  , "SnowballType" :: Maybe (SnowballType)
+  , "CreationDate" :: Maybe (Types.Timestamp)
+  , "Resources" :: Maybe (JobResource)
+  , "Description" :: Maybe (String)
+  , "KmsKeyARN" :: Maybe (KmsKeyARN)
+  , "RoleARN" :: Maybe (RoleARN)
+  , "AddressId" :: Maybe (AddressId)
+  , "ShippingDetails" :: Maybe (ShippingDetails)
+  , "SnowballCapacityPreference" :: Maybe (SnowballCapacity)
+  , "Notification" :: Maybe (Notification)
+  , "DataTransferProgress" :: Maybe (DataTransfer)
+  , "JobLogInfo" :: Maybe (JobLogs)
+  , "ClusterId" :: Maybe (String)
+  , "ForwardingAddressId" :: Maybe (AddressId)
   }
 derive instance newtypeJobMetadata :: Newtype JobMetadata _
 derive instance repGenericJobMetadata :: Generic JobMetadata _
@@ -901,12 +900,12 @@ instance encodeJobMetadata :: Encode JobMetadata where encode = genericEncode op
 
 -- | Constructs JobMetadata from required parameters
 newJobMetadata :: JobMetadata
-newJobMetadata  = JobMetadata { "AddressId": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "CreationDate": (NullOrUndefined Nothing), "DataTransferProgress": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "JobId": (NullOrUndefined Nothing), "JobLogInfo": (NullOrUndefined Nothing), "JobState": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingDetails": (NullOrUndefined Nothing), "SnowballCapacityPreference": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newJobMetadata  = JobMetadata { "AddressId": Nothing, "ClusterId": Nothing, "CreationDate": Nothing, "DataTransferProgress": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "JobId": Nothing, "JobLogInfo": Nothing, "JobState": Nothing, "JobType": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingDetails": Nothing, "SnowballCapacityPreference": Nothing, "SnowballType": Nothing }
 
 -- | Constructs JobMetadata's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobMetadata' :: ( { "JobId" :: NullOrUndefined (String) , "JobState" :: NullOrUndefined (JobState) , "JobType" :: NullOrUndefined (JobType) , "SnowballType" :: NullOrUndefined (SnowballType) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Resources" :: NullOrUndefined (JobResource) , "Description" :: NullOrUndefined (String) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: NullOrUndefined (RoleARN) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingDetails" :: NullOrUndefined (ShippingDetails) , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity) , "Notification" :: NullOrUndefined (Notification) , "DataTransferProgress" :: NullOrUndefined (DataTransfer) , "JobLogInfo" :: NullOrUndefined (JobLogs) , "ClusterId" :: NullOrUndefined (String) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> {"JobId" :: NullOrUndefined (String) , "JobState" :: NullOrUndefined (JobState) , "JobType" :: NullOrUndefined (JobType) , "SnowballType" :: NullOrUndefined (SnowballType) , "CreationDate" :: NullOrUndefined (Types.Timestamp) , "Resources" :: NullOrUndefined (JobResource) , "Description" :: NullOrUndefined (String) , "KmsKeyARN" :: NullOrUndefined (KmsKeyARN) , "RoleARN" :: NullOrUndefined (RoleARN) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingDetails" :: NullOrUndefined (ShippingDetails) , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity) , "Notification" :: NullOrUndefined (Notification) , "DataTransferProgress" :: NullOrUndefined (DataTransfer) , "JobLogInfo" :: NullOrUndefined (JobLogs) , "ClusterId" :: NullOrUndefined (String) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } ) -> JobMetadata
-newJobMetadata'  customize = (JobMetadata <<< customize) { "AddressId": (NullOrUndefined Nothing), "ClusterId": (NullOrUndefined Nothing), "CreationDate": (NullOrUndefined Nothing), "DataTransferProgress": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "JobId": (NullOrUndefined Nothing), "JobLogInfo": (NullOrUndefined Nothing), "JobState": (NullOrUndefined Nothing), "JobType": (NullOrUndefined Nothing), "KmsKeyARN": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingDetails": (NullOrUndefined Nothing), "SnowballCapacityPreference": (NullOrUndefined Nothing), "SnowballType": (NullOrUndefined Nothing) }
+newJobMetadata' :: ( { "JobId" :: Maybe (String) , "JobState" :: Maybe (JobState) , "JobType" :: Maybe (JobType) , "SnowballType" :: Maybe (SnowballType) , "CreationDate" :: Maybe (Types.Timestamp) , "Resources" :: Maybe (JobResource) , "Description" :: Maybe (String) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: Maybe (RoleARN) , "AddressId" :: Maybe (AddressId) , "ShippingDetails" :: Maybe (ShippingDetails) , "SnowballCapacityPreference" :: Maybe (SnowballCapacity) , "Notification" :: Maybe (Notification) , "DataTransferProgress" :: Maybe (DataTransfer) , "JobLogInfo" :: Maybe (JobLogs) , "ClusterId" :: Maybe (String) , "ForwardingAddressId" :: Maybe (AddressId) } -> {"JobId" :: Maybe (String) , "JobState" :: Maybe (JobState) , "JobType" :: Maybe (JobType) , "SnowballType" :: Maybe (SnowballType) , "CreationDate" :: Maybe (Types.Timestamp) , "Resources" :: Maybe (JobResource) , "Description" :: Maybe (String) , "KmsKeyARN" :: Maybe (KmsKeyARN) , "RoleARN" :: Maybe (RoleARN) , "AddressId" :: Maybe (AddressId) , "ShippingDetails" :: Maybe (ShippingDetails) , "SnowballCapacityPreference" :: Maybe (SnowballCapacity) , "Notification" :: Maybe (Notification) , "DataTransferProgress" :: Maybe (DataTransfer) , "JobLogInfo" :: Maybe (JobLogs) , "ClusterId" :: Maybe (String) , "ForwardingAddressId" :: Maybe (AddressId) } ) -> JobMetadata
+newJobMetadata'  customize = (JobMetadata <<< customize) { "AddressId": Nothing, "ClusterId": Nothing, "CreationDate": Nothing, "DataTransferProgress": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "JobId": Nothing, "JobLogInfo": Nothing, "JobState": Nothing, "JobType": Nothing, "KmsKeyARN": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingDetails": Nothing, "SnowballCapacityPreference": Nothing, "SnowballType": Nothing }
 
 
 
@@ -921,8 +920,8 @@ instance encodeJobMetadataList :: Encode JobMetadataList where encode = genericE
 
 -- | <p>Contains an array of <code>S3Resource</code> objects. Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into.</p>
 newtype JobResource = JobResource 
-  { "S3Resources" :: NullOrUndefined (S3ResourceList)
-  , "LambdaResources" :: NullOrUndefined (LambdaResourceList)
+  { "S3Resources" :: Maybe (S3ResourceList)
+  , "LambdaResources" :: Maybe (LambdaResourceList)
   }
 derive instance newtypeJobResource :: Newtype JobResource _
 derive instance repGenericJobResource :: Generic JobResource _
@@ -932,12 +931,12 @@ instance encodeJobResource :: Encode JobResource where encode = genericEncode op
 
 -- | Constructs JobResource from required parameters
 newJobResource :: JobResource
-newJobResource  = JobResource { "LambdaResources": (NullOrUndefined Nothing), "S3Resources": (NullOrUndefined Nothing) }
+newJobResource  = JobResource { "LambdaResources": Nothing, "S3Resources": Nothing }
 
 -- | Constructs JobResource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newJobResource' :: ( { "S3Resources" :: NullOrUndefined (S3ResourceList) , "LambdaResources" :: NullOrUndefined (LambdaResourceList) } -> {"S3Resources" :: NullOrUndefined (S3ResourceList) , "LambdaResources" :: NullOrUndefined (LambdaResourceList) } ) -> JobResource
-newJobResource'  customize = (JobResource <<< customize) { "LambdaResources": (NullOrUndefined Nothing), "S3Resources": (NullOrUndefined Nothing) }
+newJobResource' :: ( { "S3Resources" :: Maybe (S3ResourceList) , "LambdaResources" :: Maybe (LambdaResourceList) } -> {"S3Resources" :: Maybe (S3ResourceList) , "LambdaResources" :: Maybe (LambdaResourceList) } ) -> JobResource
+newJobResource'  customize = (JobResource <<< customize) { "LambdaResources": Nothing, "S3Resources": Nothing }
 
 
 
@@ -970,7 +969,7 @@ instance encodeJobType :: Encode JobType where encode = genericEncode options
 
 -- | <p>The provided AWS Key Management Service key lacks the permissions to perform the specified <a>CreateJob</a> or <a>UpdateJob</a> action.</p>
 newtype KMSRequestFailedException = KMSRequestFailedException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeKMSRequestFailedException :: Newtype KMSRequestFailedException _
 derive instance repGenericKMSRequestFailedException :: Generic KMSRequestFailedException _
@@ -980,19 +979,19 @@ instance encodeKMSRequestFailedException :: Encode KMSRequestFailedException whe
 
 -- | Constructs KMSRequestFailedException from required parameters
 newKMSRequestFailedException :: KMSRequestFailedException
-newKMSRequestFailedException  = KMSRequestFailedException { "Message": (NullOrUndefined Nothing) }
+newKMSRequestFailedException  = KMSRequestFailedException { "Message": Nothing }
 
 -- | Constructs KMSRequestFailedException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKMSRequestFailedException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> KMSRequestFailedException
-newKMSRequestFailedException'  customize = (KMSRequestFailedException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newKMSRequestFailedException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> KMSRequestFailedException
+newKMSRequestFailedException'  customize = (KMSRequestFailedException <<< customize) { "Message": Nothing }
 
 
 
 -- | <p>Contains a key range. For export jobs, a <code>S3Resource</code> object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 newtype KeyRange = KeyRange 
-  { "BeginMarker" :: NullOrUndefined (String)
-  , "EndMarker" :: NullOrUndefined (String)
+  { "BeginMarker" :: Maybe (String)
+  , "EndMarker" :: Maybe (String)
   }
 derive instance newtypeKeyRange :: Newtype KeyRange _
 derive instance repGenericKeyRange :: Generic KeyRange _
@@ -1002,12 +1001,12 @@ instance encodeKeyRange :: Encode KeyRange where encode = genericEncode options
 
 -- | Constructs KeyRange from required parameters
 newKeyRange :: KeyRange
-newKeyRange  = KeyRange { "BeginMarker": (NullOrUndefined Nothing), "EndMarker": (NullOrUndefined Nothing) }
+newKeyRange  = KeyRange { "BeginMarker": Nothing, "EndMarker": Nothing }
 
 -- | Constructs KeyRange's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newKeyRange' :: ( { "BeginMarker" :: NullOrUndefined (String) , "EndMarker" :: NullOrUndefined (String) } -> {"BeginMarker" :: NullOrUndefined (String) , "EndMarker" :: NullOrUndefined (String) } ) -> KeyRange
-newKeyRange'  customize = (KeyRange <<< customize) { "BeginMarker": (NullOrUndefined Nothing), "EndMarker": (NullOrUndefined Nothing) }
+newKeyRange' :: ( { "BeginMarker" :: Maybe (String) , "EndMarker" :: Maybe (String) } -> {"BeginMarker" :: Maybe (String) , "EndMarker" :: Maybe (String) } ) -> KeyRange
+newKeyRange'  customize = (KeyRange <<< customize) { "BeginMarker": Nothing, "EndMarker": Nothing }
 
 
 
@@ -1022,8 +1021,8 @@ instance encodeKmsKeyARN :: Encode KmsKeyARN where encode = genericEncode option
 
 -- | <p>Identifies </p>
 newtype LambdaResource = LambdaResource 
-  { "LambdaArn" :: NullOrUndefined (ResourceARN)
-  , "EventTriggers" :: NullOrUndefined (EventTriggerDefinitionList)
+  { "LambdaArn" :: Maybe (ResourceARN)
+  , "EventTriggers" :: Maybe (EventTriggerDefinitionList)
   }
 derive instance newtypeLambdaResource :: Newtype LambdaResource _
 derive instance repGenericLambdaResource :: Generic LambdaResource _
@@ -1033,12 +1032,12 @@ instance encodeLambdaResource :: Encode LambdaResource where encode = genericEnc
 
 -- | Constructs LambdaResource from required parameters
 newLambdaResource :: LambdaResource
-newLambdaResource  = LambdaResource { "EventTriggers": (NullOrUndefined Nothing), "LambdaArn": (NullOrUndefined Nothing) }
+newLambdaResource  = LambdaResource { "EventTriggers": Nothing, "LambdaArn": Nothing }
 
 -- | Constructs LambdaResource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newLambdaResource' :: ( { "LambdaArn" :: NullOrUndefined (ResourceARN) , "EventTriggers" :: NullOrUndefined (EventTriggerDefinitionList) } -> {"LambdaArn" :: NullOrUndefined (ResourceARN) , "EventTriggers" :: NullOrUndefined (EventTriggerDefinitionList) } ) -> LambdaResource
-newLambdaResource'  customize = (LambdaResource <<< customize) { "EventTriggers": (NullOrUndefined Nothing), "LambdaArn": (NullOrUndefined Nothing) }
+newLambdaResource' :: ( { "LambdaArn" :: Maybe (ResourceARN) , "EventTriggers" :: Maybe (EventTriggerDefinitionList) } -> {"LambdaArn" :: Maybe (ResourceARN) , "EventTriggers" :: Maybe (EventTriggerDefinitionList) } ) -> LambdaResource
+newLambdaResource'  customize = (LambdaResource <<< customize) { "EventTriggers": Nothing, "LambdaArn": Nothing }
 
 
 
@@ -1053,8 +1052,8 @@ instance encodeLambdaResourceList :: Encode LambdaResourceList where encode = ge
 
 newtype ListClusterJobsRequest = ListClusterJobsRequest 
   { "ClusterId" :: (ClusterId)
-  , "MaxResults" :: NullOrUndefined (ListLimit)
-  , "NextToken" :: NullOrUndefined (String)
+  , "MaxResults" :: Maybe (ListLimit)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListClusterJobsRequest :: Newtype ListClusterJobsRequest _
 derive instance repGenericListClusterJobsRequest :: Generic ListClusterJobsRequest _
@@ -1064,18 +1063,18 @@ instance encodeListClusterJobsRequest :: Encode ListClusterJobsRequest where enc
 
 -- | Constructs ListClusterJobsRequest from required parameters
 newListClusterJobsRequest :: ClusterId -> ListClusterJobsRequest
-newListClusterJobsRequest _ClusterId = ListClusterJobsRequest { "ClusterId": _ClusterId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClusterJobsRequest _ClusterId = ListClusterJobsRequest { "ClusterId": _ClusterId, "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListClusterJobsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListClusterJobsRequest' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } -> {"ClusterId" :: (ClusterId) , "MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } ) -> ListClusterJobsRequest
-newListClusterJobsRequest' _ClusterId customize = (ListClusterJobsRequest <<< customize) { "ClusterId": _ClusterId, "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClusterJobsRequest' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } -> {"ClusterId" :: (ClusterId) , "MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } ) -> ListClusterJobsRequest
+newListClusterJobsRequest' _ClusterId customize = (ListClusterJobsRequest <<< customize) { "ClusterId": _ClusterId, "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListClusterJobsResult = ListClusterJobsResult 
-  { "JobListEntries" :: NullOrUndefined (JobListEntryList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "JobListEntries" :: Maybe (JobListEntryList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListClusterJobsResult :: Newtype ListClusterJobsResult _
 derive instance repGenericListClusterJobsResult :: Generic ListClusterJobsResult _
@@ -1085,18 +1084,18 @@ instance encodeListClusterJobsResult :: Encode ListClusterJobsResult where encod
 
 -- | Constructs ListClusterJobsResult from required parameters
 newListClusterJobsResult :: ListClusterJobsResult
-newListClusterJobsResult  = ListClusterJobsResult { "JobListEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClusterJobsResult  = ListClusterJobsResult { "JobListEntries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListClusterJobsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListClusterJobsResult' :: ( { "JobListEntries" :: NullOrUndefined (JobListEntryList) , "NextToken" :: NullOrUndefined (String) } -> {"JobListEntries" :: NullOrUndefined (JobListEntryList) , "NextToken" :: NullOrUndefined (String) } ) -> ListClusterJobsResult
-newListClusterJobsResult'  customize = (ListClusterJobsResult <<< customize) { "JobListEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClusterJobsResult' :: ( { "JobListEntries" :: Maybe (JobListEntryList) , "NextToken" :: Maybe (String) } -> {"JobListEntries" :: Maybe (JobListEntryList) , "NextToken" :: Maybe (String) } ) -> ListClusterJobsResult
+newListClusterJobsResult'  customize = (ListClusterJobsResult <<< customize) { "JobListEntries": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListClustersRequest = ListClustersRequest 
-  { "MaxResults" :: NullOrUndefined (ListLimit)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (ListLimit)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListClustersRequest :: Newtype ListClustersRequest _
 derive instance repGenericListClustersRequest :: Generic ListClustersRequest _
@@ -1106,18 +1105,18 @@ instance encodeListClustersRequest :: Encode ListClustersRequest where encode = 
 
 -- | Constructs ListClustersRequest from required parameters
 newListClustersRequest :: ListClustersRequest
-newListClustersRequest  = ListClustersRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClustersRequest  = ListClustersRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListClustersRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListClustersRequest' :: ( { "MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } ) -> ListClustersRequest
-newListClustersRequest'  customize = (ListClustersRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClustersRequest' :: ( { "MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } ) -> ListClustersRequest
+newListClustersRequest'  customize = (ListClustersRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListClustersResult = ListClustersResult 
-  { "ClusterListEntries" :: NullOrUndefined (ClusterListEntryList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "ClusterListEntries" :: Maybe (ClusterListEntryList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListClustersResult :: Newtype ListClustersResult _
 derive instance repGenericListClustersResult :: Generic ListClustersResult _
@@ -1127,18 +1126,18 @@ instance encodeListClustersResult :: Encode ListClustersResult where encode = ge
 
 -- | Constructs ListClustersResult from required parameters
 newListClustersResult :: ListClustersResult
-newListClustersResult  = ListClustersResult { "ClusterListEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClustersResult  = ListClustersResult { "ClusterListEntries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListClustersResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListClustersResult' :: ( { "ClusterListEntries" :: NullOrUndefined (ClusterListEntryList) , "NextToken" :: NullOrUndefined (String) } -> {"ClusterListEntries" :: NullOrUndefined (ClusterListEntryList) , "NextToken" :: NullOrUndefined (String) } ) -> ListClustersResult
-newListClustersResult'  customize = (ListClustersResult <<< customize) { "ClusterListEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListClustersResult' :: ( { "ClusterListEntries" :: Maybe (ClusterListEntryList) , "NextToken" :: Maybe (String) } -> {"ClusterListEntries" :: Maybe (ClusterListEntryList) , "NextToken" :: Maybe (String) } ) -> ListClustersResult
+newListClustersResult'  customize = (ListClustersResult <<< customize) { "ClusterListEntries": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListJobsRequest = ListJobsRequest 
-  { "MaxResults" :: NullOrUndefined (ListLimit)
-  , "NextToken" :: NullOrUndefined (String)
+  { "MaxResults" :: Maybe (ListLimit)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListJobsRequest :: Newtype ListJobsRequest _
 derive instance repGenericListJobsRequest :: Generic ListJobsRequest _
@@ -1148,18 +1147,18 @@ instance encodeListJobsRequest :: Encode ListJobsRequest where encode = genericE
 
 -- | Constructs ListJobsRequest from required parameters
 newListJobsRequest :: ListJobsRequest
-newListJobsRequest  = ListJobsRequest { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListJobsRequest  = ListJobsRequest { "MaxResults": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListJobsRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListJobsRequest' :: ( { "MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } -> {"MaxResults" :: NullOrUndefined (ListLimit) , "NextToken" :: NullOrUndefined (String) } ) -> ListJobsRequest
-newListJobsRequest'  customize = (ListJobsRequest <<< customize) { "MaxResults": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListJobsRequest' :: ( { "MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } -> {"MaxResults" :: Maybe (ListLimit) , "NextToken" :: Maybe (String) } ) -> ListJobsRequest
+newListJobsRequest'  customize = (ListJobsRequest <<< customize) { "MaxResults": Nothing, "NextToken": Nothing }
 
 
 
 newtype ListJobsResult = ListJobsResult 
-  { "JobListEntries" :: NullOrUndefined (JobListEntryList)
-  , "NextToken" :: NullOrUndefined (String)
+  { "JobListEntries" :: Maybe (JobListEntryList)
+  , "NextToken" :: Maybe (String)
   }
 derive instance newtypeListJobsResult :: Newtype ListJobsResult _
 derive instance repGenericListJobsResult :: Generic ListJobsResult _
@@ -1169,12 +1168,12 @@ instance encodeListJobsResult :: Encode ListJobsResult where encode = genericEnc
 
 -- | Constructs ListJobsResult from required parameters
 newListJobsResult :: ListJobsResult
-newListJobsResult  = ListJobsResult { "JobListEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListJobsResult  = ListJobsResult { "JobListEntries": Nothing, "NextToken": Nothing }
 
 -- | Constructs ListJobsResult's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newListJobsResult' :: ( { "JobListEntries" :: NullOrUndefined (JobListEntryList) , "NextToken" :: NullOrUndefined (String) } -> {"JobListEntries" :: NullOrUndefined (JobListEntryList) , "NextToken" :: NullOrUndefined (String) } ) -> ListJobsResult
-newListJobsResult'  customize = (ListJobsResult <<< customize) { "JobListEntries": (NullOrUndefined Nothing), "NextToken": (NullOrUndefined Nothing) }
+newListJobsResult' :: ( { "JobListEntries" :: Maybe (JobListEntryList) , "NextToken" :: Maybe (String) } -> {"JobListEntries" :: Maybe (JobListEntryList) , "NextToken" :: Maybe (String) } ) -> ListJobsResult
+newListJobsResult'  customize = (ListJobsResult <<< customize) { "JobListEntries": Nothing, "NextToken": Nothing }
 
 
 
@@ -1189,9 +1188,9 @@ instance encodeListLimit :: Encode ListLimit where encode = genericEncode option
 
 -- | <p>The Amazon Simple Notification Service (Amazon SNS) notification settings associated with a specific job. The <code>Notification</code> object is returned as a part of the response syntax of the <code>DescribeJob</code> action in the <code>JobMetadata</code> data type.</p> <p>When the notification settings are defined during job creation, you can choose to notify based on a specific set of job states using the <code>JobStatesToNotify</code> array of strings, or you can specify that you want to have Amazon SNS notifications sent out for all job states with <code>NotifyAll</code> set to true.</p>
 newtype Notification = Notification 
-  { "SnsTopicARN" :: NullOrUndefined (SnsTopicARN)
-  , "JobStatesToNotify" :: NullOrUndefined (JobStateList)
-  , "NotifyAll" :: NullOrUndefined (Boolean)
+  { "SnsTopicARN" :: Maybe (SnsTopicARN)
+  , "JobStatesToNotify" :: Maybe (JobStateList)
+  , "NotifyAll" :: Maybe (Boolean)
   }
 derive instance newtypeNotification :: Newtype Notification _
 derive instance repGenericNotification :: Generic Notification _
@@ -1201,12 +1200,12 @@ instance encodeNotification :: Encode Notification where encode = genericEncode 
 
 -- | Constructs Notification from required parameters
 newNotification :: Notification
-newNotification  = Notification { "JobStatesToNotify": (NullOrUndefined Nothing), "NotifyAll": (NullOrUndefined Nothing), "SnsTopicARN": (NullOrUndefined Nothing) }
+newNotification  = Notification { "JobStatesToNotify": Nothing, "NotifyAll": Nothing, "SnsTopicARN": Nothing }
 
 -- | Constructs Notification's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newNotification' :: ( { "SnsTopicARN" :: NullOrUndefined (SnsTopicARN) , "JobStatesToNotify" :: NullOrUndefined (JobStateList) , "NotifyAll" :: NullOrUndefined (Boolean) } -> {"SnsTopicARN" :: NullOrUndefined (SnsTopicARN) , "JobStatesToNotify" :: NullOrUndefined (JobStateList) , "NotifyAll" :: NullOrUndefined (Boolean) } ) -> Notification
-newNotification'  customize = (Notification <<< customize) { "JobStatesToNotify": (NullOrUndefined Nothing), "NotifyAll": (NullOrUndefined Nothing), "SnsTopicARN": (NullOrUndefined Nothing) }
+newNotification' :: ( { "SnsTopicARN" :: Maybe (SnsTopicARN) , "JobStatesToNotify" :: Maybe (JobStateList) , "NotifyAll" :: Maybe (Boolean) } -> {"SnsTopicARN" :: Maybe (SnsTopicARN) , "JobStatesToNotify" :: Maybe (JobStateList) , "NotifyAll" :: Maybe (Boolean) } ) -> Notification
+newNotification'  customize = (Notification <<< customize) { "JobStatesToNotify": Nothing, "NotifyAll": Nothing, "SnsTopicARN": Nothing }
 
 
 
@@ -1230,8 +1229,8 @@ instance encodeRoleARN :: Encode RoleARN where encode = genericEncode options
 
 -- | <p>Each <code>S3Resource</code> object represents an Amazon S3 bucket that your transferred data will be exported from or imported into. For export jobs, this object can have an optional <code>KeyRange</code> value. The length of the range is defined at job creation, and has either an inclusive <code>BeginMarker</code>, an inclusive <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
 newtype S3Resource = S3Resource 
-  { "BucketArn" :: NullOrUndefined (ResourceARN)
-  , "KeyRange" :: NullOrUndefined (KeyRange)
+  { "BucketArn" :: Maybe (ResourceARN)
+  , "KeyRange" :: Maybe (KeyRange)
   }
 derive instance newtypeS3Resource :: Newtype S3Resource _
 derive instance repGenericS3Resource :: Generic S3Resource _
@@ -1241,12 +1240,12 @@ instance encodeS3Resource :: Encode S3Resource where encode = genericEncode opti
 
 -- | Constructs S3Resource from required parameters
 newS3Resource :: S3Resource
-newS3Resource  = S3Resource { "BucketArn": (NullOrUndefined Nothing), "KeyRange": (NullOrUndefined Nothing) }
+newS3Resource  = S3Resource { "BucketArn": Nothing, "KeyRange": Nothing }
 
 -- | Constructs S3Resource's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newS3Resource' :: ( { "BucketArn" :: NullOrUndefined (ResourceARN) , "KeyRange" :: NullOrUndefined (KeyRange) } -> {"BucketArn" :: NullOrUndefined (ResourceARN) , "KeyRange" :: NullOrUndefined (KeyRange) } ) -> S3Resource
-newS3Resource'  customize = (S3Resource <<< customize) { "BucketArn": (NullOrUndefined Nothing), "KeyRange": (NullOrUndefined Nothing) }
+newS3Resource' :: ( { "BucketArn" :: Maybe (ResourceARN) , "KeyRange" :: Maybe (KeyRange) } -> {"BucketArn" :: Maybe (ResourceARN) , "KeyRange" :: Maybe (KeyRange) } ) -> S3Resource
+newS3Resource'  customize = (S3Resource <<< customize) { "BucketArn": Nothing, "KeyRange": Nothing }
 
 
 
@@ -1261,8 +1260,8 @@ instance encodeS3ResourceList :: Encode S3ResourceList where encode = genericEnc
 
 -- | <p>The <code>Status</code> and <code>TrackingNumber</code> information for an inbound or outbound shipment.</p>
 newtype Shipment = Shipment 
-  { "Status" :: NullOrUndefined (String)
-  , "TrackingNumber" :: NullOrUndefined (String)
+  { "Status" :: Maybe (String)
+  , "TrackingNumber" :: Maybe (String)
   }
 derive instance newtypeShipment :: Newtype Shipment _
 derive instance repGenericShipment :: Generic Shipment _
@@ -1272,20 +1271,20 @@ instance encodeShipment :: Encode Shipment where encode = genericEncode options
 
 -- | Constructs Shipment from required parameters
 newShipment :: Shipment
-newShipment  = Shipment { "Status": (NullOrUndefined Nothing), "TrackingNumber": (NullOrUndefined Nothing) }
+newShipment  = Shipment { "Status": Nothing, "TrackingNumber": Nothing }
 
 -- | Constructs Shipment's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newShipment' :: ( { "Status" :: NullOrUndefined (String) , "TrackingNumber" :: NullOrUndefined (String) } -> {"Status" :: NullOrUndefined (String) , "TrackingNumber" :: NullOrUndefined (String) } ) -> Shipment
-newShipment'  customize = (Shipment <<< customize) { "Status": (NullOrUndefined Nothing), "TrackingNumber": (NullOrUndefined Nothing) }
+newShipment' :: ( { "Status" :: Maybe (String) , "TrackingNumber" :: Maybe (String) } -> {"Status" :: Maybe (String) , "TrackingNumber" :: Maybe (String) } ) -> Shipment
+newShipment'  customize = (Shipment <<< customize) { "Status": Nothing, "TrackingNumber": Nothing }
 
 
 
 -- | <p>A job's shipping information, including inbound and outbound tracking numbers and shipping speed options.</p>
 newtype ShippingDetails = ShippingDetails 
-  { "ShippingOption" :: NullOrUndefined (ShippingOption)
-  , "InboundShipment" :: NullOrUndefined (Shipment)
-  , "OutboundShipment" :: NullOrUndefined (Shipment)
+  { "ShippingOption" :: Maybe (ShippingOption)
+  , "InboundShipment" :: Maybe (Shipment)
+  , "OutboundShipment" :: Maybe (Shipment)
   }
 derive instance newtypeShippingDetails :: Newtype ShippingDetails _
 derive instance repGenericShippingDetails :: Generic ShippingDetails _
@@ -1295,12 +1294,12 @@ instance encodeShippingDetails :: Encode ShippingDetails where encode = genericE
 
 -- | Constructs ShippingDetails from required parameters
 newShippingDetails :: ShippingDetails
-newShippingDetails  = ShippingDetails { "InboundShipment": (NullOrUndefined Nothing), "OutboundShipment": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing) }
+newShippingDetails  = ShippingDetails { "InboundShipment": Nothing, "OutboundShipment": Nothing, "ShippingOption": Nothing }
 
 -- | Constructs ShippingDetails's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newShippingDetails' :: ( { "ShippingOption" :: NullOrUndefined (ShippingOption) , "InboundShipment" :: NullOrUndefined (Shipment) , "OutboundShipment" :: NullOrUndefined (Shipment) } -> {"ShippingOption" :: NullOrUndefined (ShippingOption) , "InboundShipment" :: NullOrUndefined (Shipment) , "OutboundShipment" :: NullOrUndefined (Shipment) } ) -> ShippingDetails
-newShippingDetails'  customize = (ShippingDetails <<< customize) { "InboundShipment": (NullOrUndefined Nothing), "OutboundShipment": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing) }
+newShippingDetails' :: ( { "ShippingOption" :: Maybe (ShippingOption) , "InboundShipment" :: Maybe (Shipment) , "OutboundShipment" :: Maybe (Shipment) } -> {"ShippingOption" :: Maybe (ShippingOption) , "InboundShipment" :: Maybe (Shipment) , "OutboundShipment" :: Maybe (Shipment) } ) -> ShippingDetails
+newShippingDetails'  customize = (ShippingDetails <<< customize) { "InboundShipment": Nothing, "OutboundShipment": Nothing, "ShippingOption": Nothing }
 
 
 
@@ -1342,7 +1341,7 @@ instance encodeSnsTopicARN :: Encode SnsTopicARN where encode = genericEncode op
 
 -- | <p>The address is either outside the serviceable area for your region, or an error occurred. Check the address with your region's carrier and try again. If the issue persists, contact AWS Support.</p>
 newtype UnsupportedAddressException = UnsupportedAddressException 
-  { "Message" :: NullOrUndefined (String)
+  { "Message" :: Maybe (String)
   }
 derive instance newtypeUnsupportedAddressException :: Newtype UnsupportedAddressException _
 derive instance repGenericUnsupportedAddressException :: Generic UnsupportedAddressException _
@@ -1352,24 +1351,24 @@ instance encodeUnsupportedAddressException :: Encode UnsupportedAddressException
 
 -- | Constructs UnsupportedAddressException from required parameters
 newUnsupportedAddressException :: UnsupportedAddressException
-newUnsupportedAddressException  = UnsupportedAddressException { "Message": (NullOrUndefined Nothing) }
+newUnsupportedAddressException  = UnsupportedAddressException { "Message": Nothing }
 
 -- | Constructs UnsupportedAddressException's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUnsupportedAddressException' :: ( { "Message" :: NullOrUndefined (String) } -> {"Message" :: NullOrUndefined (String) } ) -> UnsupportedAddressException
-newUnsupportedAddressException'  customize = (UnsupportedAddressException <<< customize) { "Message": (NullOrUndefined Nothing) }
+newUnsupportedAddressException' :: ( { "Message" :: Maybe (String) } -> {"Message" :: Maybe (String) } ) -> UnsupportedAddressException
+newUnsupportedAddressException'  customize = (UnsupportedAddressException <<< customize) { "Message": Nothing }
 
 
 
 newtype UpdateClusterRequest = UpdateClusterRequest 
   { "ClusterId" :: (ClusterId)
-  , "RoleARN" :: NullOrUndefined (RoleARN)
-  , "Description" :: NullOrUndefined (String)
-  , "Resources" :: NullOrUndefined (JobResource)
-  , "AddressId" :: NullOrUndefined (AddressId)
-  , "ShippingOption" :: NullOrUndefined (ShippingOption)
-  , "Notification" :: NullOrUndefined (Notification)
-  , "ForwardingAddressId" :: NullOrUndefined (AddressId)
+  , "RoleARN" :: Maybe (RoleARN)
+  , "Description" :: Maybe (String)
+  , "Resources" :: Maybe (JobResource)
+  , "AddressId" :: Maybe (AddressId)
+  , "ShippingOption" :: Maybe (ShippingOption)
+  , "Notification" :: Maybe (Notification)
+  , "ForwardingAddressId" :: Maybe (AddressId)
   }
 derive instance newtypeUpdateClusterRequest :: Newtype UpdateClusterRequest _
 derive instance repGenericUpdateClusterRequest :: Generic UpdateClusterRequest _
@@ -1379,12 +1378,12 @@ instance encodeUpdateClusterRequest :: Encode UpdateClusterRequest where encode 
 
 -- | Constructs UpdateClusterRequest from required parameters
 newUpdateClusterRequest :: ClusterId -> UpdateClusterRequest
-newUpdateClusterRequest _ClusterId = UpdateClusterRequest { "ClusterId": _ClusterId, "AddressId": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing) }
+newUpdateClusterRequest _ClusterId = UpdateClusterRequest { "ClusterId": _ClusterId, "AddressId": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing }
 
 -- | Constructs UpdateClusterRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateClusterRequest' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "RoleARN" :: NullOrUndefined (RoleARN) , "Description" :: NullOrUndefined (String) , "Resources" :: NullOrUndefined (JobResource) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> {"ClusterId" :: (ClusterId) , "RoleARN" :: NullOrUndefined (RoleARN) , "Description" :: NullOrUndefined (String) , "Resources" :: NullOrUndefined (JobResource) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Notification" :: NullOrUndefined (Notification) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } ) -> UpdateClusterRequest
-newUpdateClusterRequest' _ClusterId customize = (UpdateClusterRequest <<< customize) { "ClusterId": _ClusterId, "AddressId": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing) }
+newUpdateClusterRequest' :: ClusterId -> ( { "ClusterId" :: (ClusterId) , "RoleARN" :: Maybe (RoleARN) , "Description" :: Maybe (String) , "Resources" :: Maybe (JobResource) , "AddressId" :: Maybe (AddressId) , "ShippingOption" :: Maybe (ShippingOption) , "Notification" :: Maybe (Notification) , "ForwardingAddressId" :: Maybe (AddressId) } -> {"ClusterId" :: (ClusterId) , "RoleARN" :: Maybe (RoleARN) , "Description" :: Maybe (String) , "Resources" :: Maybe (JobResource) , "AddressId" :: Maybe (AddressId) , "ShippingOption" :: Maybe (ShippingOption) , "Notification" :: Maybe (Notification) , "ForwardingAddressId" :: Maybe (AddressId) } ) -> UpdateClusterRequest
+newUpdateClusterRequest' _ClusterId customize = (UpdateClusterRequest <<< customize) { "ClusterId": _ClusterId, "AddressId": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing }
 
 
 
@@ -1399,14 +1398,14 @@ instance encodeUpdateClusterResult :: Encode UpdateClusterResult where encode = 
 
 newtype UpdateJobRequest = UpdateJobRequest 
   { "JobId" :: (JobId)
-  , "RoleARN" :: NullOrUndefined (RoleARN)
-  , "Notification" :: NullOrUndefined (Notification)
-  , "Resources" :: NullOrUndefined (JobResource)
-  , "AddressId" :: NullOrUndefined (AddressId)
-  , "ShippingOption" :: NullOrUndefined (ShippingOption)
-  , "Description" :: NullOrUndefined (String)
-  , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity)
-  , "ForwardingAddressId" :: NullOrUndefined (AddressId)
+  , "RoleARN" :: Maybe (RoleARN)
+  , "Notification" :: Maybe (Notification)
+  , "Resources" :: Maybe (JobResource)
+  , "AddressId" :: Maybe (AddressId)
+  , "ShippingOption" :: Maybe (ShippingOption)
+  , "Description" :: Maybe (String)
+  , "SnowballCapacityPreference" :: Maybe (SnowballCapacity)
+  , "ForwardingAddressId" :: Maybe (AddressId)
   }
 derive instance newtypeUpdateJobRequest :: Newtype UpdateJobRequest _
 derive instance repGenericUpdateJobRequest :: Generic UpdateJobRequest _
@@ -1416,12 +1415,12 @@ instance encodeUpdateJobRequest :: Encode UpdateJobRequest where encode = generi
 
 -- | Constructs UpdateJobRequest from required parameters
 newUpdateJobRequest :: JobId -> UpdateJobRequest
-newUpdateJobRequest _JobId = UpdateJobRequest { "JobId": _JobId, "AddressId": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing), "SnowballCapacityPreference": (NullOrUndefined Nothing) }
+newUpdateJobRequest _JobId = UpdateJobRequest { "JobId": _JobId, "AddressId": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing, "SnowballCapacityPreference": Nothing }
 
 -- | Constructs UpdateJobRequest's fields from required parameters
 --   This may be useful if you need to immediately overwrite some of the optional values
-newUpdateJobRequest' :: JobId -> ( { "JobId" :: (JobId) , "RoleARN" :: NullOrUndefined (RoleARN) , "Notification" :: NullOrUndefined (Notification) , "Resources" :: NullOrUndefined (JobResource) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Description" :: NullOrUndefined (String) , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } -> {"JobId" :: (JobId) , "RoleARN" :: NullOrUndefined (RoleARN) , "Notification" :: NullOrUndefined (Notification) , "Resources" :: NullOrUndefined (JobResource) , "AddressId" :: NullOrUndefined (AddressId) , "ShippingOption" :: NullOrUndefined (ShippingOption) , "Description" :: NullOrUndefined (String) , "SnowballCapacityPreference" :: NullOrUndefined (SnowballCapacity) , "ForwardingAddressId" :: NullOrUndefined (AddressId) } ) -> UpdateJobRequest
-newUpdateJobRequest' _JobId customize = (UpdateJobRequest <<< customize) { "JobId": _JobId, "AddressId": (NullOrUndefined Nothing), "Description": (NullOrUndefined Nothing), "ForwardingAddressId": (NullOrUndefined Nothing), "Notification": (NullOrUndefined Nothing), "Resources": (NullOrUndefined Nothing), "RoleARN": (NullOrUndefined Nothing), "ShippingOption": (NullOrUndefined Nothing), "SnowballCapacityPreference": (NullOrUndefined Nothing) }
+newUpdateJobRequest' :: JobId -> ( { "JobId" :: (JobId) , "RoleARN" :: Maybe (RoleARN) , "Notification" :: Maybe (Notification) , "Resources" :: Maybe (JobResource) , "AddressId" :: Maybe (AddressId) , "ShippingOption" :: Maybe (ShippingOption) , "Description" :: Maybe (String) , "SnowballCapacityPreference" :: Maybe (SnowballCapacity) , "ForwardingAddressId" :: Maybe (AddressId) } -> {"JobId" :: (JobId) , "RoleARN" :: Maybe (RoleARN) , "Notification" :: Maybe (Notification) , "Resources" :: Maybe (JobResource) , "AddressId" :: Maybe (AddressId) , "ShippingOption" :: Maybe (ShippingOption) , "Description" :: Maybe (String) , "SnowballCapacityPreference" :: Maybe (SnowballCapacity) , "ForwardingAddressId" :: Maybe (AddressId) } ) -> UpdateJobRequest
+newUpdateJobRequest' _JobId customize = (UpdateJobRequest <<< customize) { "JobId": _JobId, "AddressId": Nothing, "Description": Nothing, "ForwardingAddressId": Nothing, "Notification": Nothing, "Resources": Nothing, "RoleARN": Nothing, "ShippingOption": Nothing, "SnowballCapacityPreference": Nothing }
 
 
 
